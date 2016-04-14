@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta content="text/html" charset="UTF-8" http-queiv="Content-Type" />
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+        <meta content="ios demo" name="description" />
+        <link rel="stylesheet" href="SNBodyCSS.css">
+            <script src="zepto.min.js"></script>
+            <script src="SNJavaBridge.js"></script>
+    </head>
+    <body>
+         <div class="news-wrapper">
+             <section class="news-content" id="news-content">
+                 <h1 id="news-title">{{ newsContentDict.title }}</h1>
+                 <div class="from">
+                     <a class="news-comments" href="newscomments" id="news-comments" style="">{{ newsContentDict.count }} 评论</a>
+                     </span><time id="news-time">{{ newsContentDict.showtime }}</time>
+                     <span class="author">{{ newsContentDict.source }}
+          </div>
+          <article id="news-article" style="font-size:17px;">
+              <div class="relate-stocks"{% if newsContentDict.relatedstocks.count == 0 %}style="display:none;"{% /if %} >{%if newsContentDict.relatedstocks.count > 0 %}
+                  <b id="relateStockName">相关股票:</b>
+                  {% for stockInfo in newsContentDict.relatedstocks %}
+                  <a href="relatedstock_{{stockInfo.fullCode}}_{{stockInfo.stockUrl }}">{{stockInfo.stockName}}</a>
+                  {%/for %}
+                  {%/if %}
+              </div>
+              <div id="article-body">
+                  {{newsContentDict.body}}
+              </div>
+           </article>
+          <div class="zwshare">
+              <b id="shareName">正文分享至</b>
+              <a href="shareWX" class="wxa"><em class="wx"></em>微信</a>
+              <a href="sharePYQ" class="pyqa"><em class="pyq"></em>朋友圈</a>
+              <a href="shareWB" class="wba"><em class="wb"></em>新浪微博</a>
+          </div>
+          {{ newsContentDict.relatenewsstr }}
+          {{ newsContentDict.newsadstr }}
+        </div>
+         <script src="SNBodyJS.js"></script>
+    </body>
+</html>

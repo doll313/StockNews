@@ -1,0 +1,324 @@
+{
+  "stockbar.version": 6000,
+  "infoList.version": 6000,
+  "stockbar.shortVersion": "5.5",
+  "stockbar.runningApplication": "EastMoney",
+  "stockbar.runningApplicationName": "东方财富网",
+  "stockbar.deploymentChannel": 1,
+  "stockbar.authentication.bindRequired": false,
+  "stockbar.authentication.loginRequiredPostAndReply": false,
+  "stockbar.loading.failremindimage": "zixun_loading",
+  "stockbar.share.appDownloadLink": "http://stattg.eastmoney.com/10856",
+  "stockbar.share.shareIconName": "app_share_icon.png",
+  "zixunBody.loadingImage": "zixun_loading",
+  "zixunBody.placeholderImage": "zixun_loading",
+  "zixunBody.contentplaceholderImage": "icon_zixunlist_placeholder",
+  "zixunBody.tableViewCellholderImage": "icon_zixunlist_placeholder",
+  "stockbar.navbar.background.color": "202020",
+  "stockbar.navbar.tint.color": "cccccc",
+  "stockbar.navbar.title.color": "ffffff",
+  "stockbar.view.background.color": "ededed",
+  "stockbar.cell.background.color": "fcfcfc",
+  "stockbar.sepline.color": "cccccc",
+  "stockbar.text.link.color": "3668b2",
+  "stockbar.default.blue.color": "3381e3",
+  "stockbar.default.gray.color": "acacac",
+  "stockbar.default.title.color": "222222",
+  "stockbar.default.subtitle.color": "999999",
+  "stockbar.market.up.color": "ff3d01",
+  "stockbar.market.down.color": "1abe08",
+  "stockbar.market.zero.color": "888888",
+  "zixunBody.tabbar.minusHeightRequired": true,
+  "zixunList.zixunIdNamePair": [
+      {
+          "101": "要闻"
+      },
+      {
+          "102": "滚动"
+      },
+      {
+          "103": "公司"
+      },
+      {
+          "105": "全球股市"
+      },
+      {
+          "106": "商品",
+      },
+      {
+          "107": "外汇",
+      },
+      {
+          "108": "债券",
+      },
+      {
+          "109": "基金",
+      },
+      {
+          "110": "中国",
+      },
+      {
+          "111": "美国",
+      },
+      {
+          "112": "欧元区",
+      },
+      {
+          "113": "英国",
+      },
+      {
+          "114": "日本",
+      },
+      {
+          "115": "加拿大",
+      },
+      {
+          "116": "澳洲",
+      },
+      {
+          "117": "新兴市场",
+      },
+      {
+          "118": "中国央行",
+      },
+      {
+          "119": "美联储",
+      },
+      {
+          "120": "欧洲央行",
+      },
+      {
+          "121": "英国央行",
+      },
+      {
+          "122": "日本央行",
+      },
+      {
+          "123": "加拿大央行",
+      },
+      {
+          "124": "澳洲联储",
+      },
+      {
+          "125": "中国经济数据",
+      },
+      {
+          "126": "美国数据",
+      },
+      {
+          "127": "欧元区数据",
+      },
+      {
+          "128": "英国数据",
+      },
+      {
+          "129": "日本数据",
+      },
+      {
+          "130": "加拿大数据",
+      },
+      {
+          "131": "澳洲数据",
+      },
+      {
+          "355": "产经新闻",
+      },
+      {
+          "395": "报刊头条",
+      },
+      {
+          "396": "交易提示",
+      },
+      {
+          "406": "股市播报",
+      },
+      {
+          "407": "大盘",
+      },
+      {
+          "415": "个股",
+      },
+      {
+          "436": "美股要闻",
+      },
+      {
+          "532": "港股要闻",
+      },
+      {
+          "999": "自选",
+      },
+      {
+          "zhibo": "直播",
+      },
+      {
+          "stockschool": "股民学校",
+      },
+      {
+          "wagner": "看盘"
+      }
+  ],
+  "zixunList.zixunIdNameShorteningPair": {
+    "101": "ywjh",
+    "355": "cjxw",
+    "395": "bktt",
+    "396": "jyts",
+    "406": "gszb",
+    "407": "dpfx",
+    "415": "ggdj",
+    "436": "mgyw",
+    "532": "ggyw"
+  },
+  "zixunList.currentShowColumns": {
+    "global": [
+      "102",
+      "103",
+      "109",
+      "105",
+      "106",
+      "107",
+      "108",
+      "110",
+      "111",
+      "112",
+      "113",
+      "114",
+      "115",
+      "116",
+      "117",
+      "zhibo"
+    ],
+    "pdjx": [
+      "406",
+      "407",
+      "396",
+      "415",
+      "355",
+      "395",
+      "532",
+      "436"
+    ]
+  },
+  "zixunList.defaultColumns": [
+    "101",
+    "999",
+    "zhibo",
+    "415",
+    "wagner",
+    "102"
+  ],
+  "zixunList.fixedColumns": [
+    "101",
+    "999",
+    "zhibo",
+    "415",
+    "wagner",
+    "102"
+  ],
+  "zixunList.version": "1",
+  "spsimulate.buyprice": {
+    "0": "卖一价",
+    "1": "卖二价",
+    "2": "卖三价",
+    "3": "卖四价",
+    "4": "卖五价",
+    "5": "最新价",
+    "6": "空"
+  },
+  "spsimulate.buypricearr": [
+    "卖一价",
+    "卖二价",
+    "卖三价",
+    "卖四价",
+    "卖五价",
+    "最新价",
+    "空"
+  ],
+  "spsimulate.buycount": {
+    "0": "空",
+    "1": "全仓",
+    "2": "1/2",
+    "3": "1/3",
+    "4": "1/4",
+    "5": "1/5",
+    "6": "1/6"
+  },
+  "spsimulate.buycountarr": [
+    "空",
+    "全仓",
+    "1/2",
+    "1/3",
+    "1/4",
+    "1/5",
+    "1/6"
+  ],
+  "spsimulate.sellprice": {
+    "0": "买一价",
+    "1": "买二价",
+    "2": "买三价",
+    "3": "买四价",
+    "4": "买五价",
+    "5": "最新价",
+    "6": "空"
+  },
+  "spsimulate.sellpricearr": [
+    "买一价",
+    "买二价",
+    "买三价",
+    "买四价",
+    "买五价",
+    "最新价",
+    "空"
+  ],
+  "spsimulate.sellcount": {
+    "0": "空",
+    "1": "全仓",
+    "2": "1/2",
+    "3": "1/3",
+    "4": "1/4",
+    "5": "1/5",
+    "6": "1/6"
+  },
+  "spsimulate.sellcountarr": [
+    "空",
+    "全仓",
+    "1/2",
+    "1/3",
+    "1/4",
+    "1/5",
+    "1/6"
+  ],
+  "sbportfolio.rankType": [
+    {
+      "4": "最赚钱"
+    },
+    {
+      "5": "人气排行"
+    },
+    {
+      "0": "日排行"
+    },
+    {
+      "1": "周排行"
+    },
+    {
+      "2": "月排行"
+    }
+  ],
+  "sbportfolio.defultRankType": [
+    {
+      "4": "最赚钱"
+    },
+    {
+      "5": "人气排行"
+    },
+    {
+      "0": "日排行"
+    },
+    {
+      "1": "周排行"
+    },
+    {
+      "2": "月排行"
+    }
+  ]
+}

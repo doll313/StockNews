@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		CBC596EA1CBF76230060206C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC596E91CBF76230060206C /* main.m */; };
 		CBC596ED1CBF76230060206C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC596EC1CBF76230060206C /* AppDelegate.m */; };
-		CBC596F01CBF76230060206C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC596EF1CBF76230060206C /* ViewController.m */; };
 		CBC596F31CBF76230060206C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBC596F11CBF76230060206C /* Main.storyboard */; };
 		CBC596F51CBF76230060206C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBC596F41CBF76230060206C /* Assets.xcassets */; };
 		CBC596F81CBF76230060206C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBC596F61CBF76230060206C /* LaunchScreen.storyboard */; };
@@ -18,6 +17,35 @@
 		CBC597071CBF77850060206C /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CBC597061CBF77850060206C /* libz.tbd */; };
 		CBC597091CBF77930060206C /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CBC597081CBF77930060206C /* libxml2.tbd */; };
 		CBC5970B1CBF77A00060206C /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CBC5970A1CBF77A00060206C /* libsqlite3.tbd */; };
+		CBC597431CBF7D900060206C /* SBEmoji.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CBC5970C1CBF7D900060206C /* SBEmoji.bundle */; };
+		CBC597441CBF7D900060206C /* sb_emoji.json in Resources */ = {isa = PBXBuildFile; fileRef = CBC5970F1CBF7D900060206C /* sb_emoji.json */; };
+		CBC597451CBF7D900060206C /* SBCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC597111CBF7D900060206C /* SBCommentCell.m */; };
+		CBC597461CBF7D900060206C /* SBCommentController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC597131CBF7D900060206C /* SBCommentController.m */; };
+		CBC597471CBF7D900060206C /* SBCommentView+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC597151CBF7D900060206C /* SBCommentView+Private.m */; };
+		CBC597481CBF7D900060206C /* SBCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC597171CBF7D900060206C /* SBCommentView.m */; };
+		CBC597491CBF7D900060206C /* SBEmojiModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC597191CBF7D900060206C /* SBEmojiModel.m */; };
+		CBC5974A1CBF7D900060206C /* SBNewsController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC5971B1CBF7D900060206C /* SBNewsController.m */; };
+		CBC5974B1CBF7D900060206C /* SBReplyView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC5971D1CBF7D900060206C /* SBReplyView.m */; };
+		CBC5974C1CBF7D900060206C /* SBStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC5971F1CBF7D900060206C /* SBStarView.m */; };
+		CBC5974D1CBF7D900060206C /* SNAsyncImageOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC597221CBF7D900060206C /* SNAsyncImageOperation.m */; };
+		CBC5974E1CBF7D900060206C /* SNBodyParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC597241CBF7D900060206C /* SNBodyParser.m */; };
+		CBC5974F1CBF7D900060206C /* SNContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC597261CBF7D900060206C /* SNContentController.m */; };
+		CBC597501CBF7D900060206C /* SNBodyCSS.css in Resources */ = {isa = PBXBuildFile; fileRef = CBC597281CBF7D900060206C /* SNBodyCSS.css */; };
+		CBC597511CBF7D900060206C /* SNBodyJS.js in Resources */ = {isa = PBXBuildFile; fileRef = CBC597291CBF7D900060206C /* SNBodyJS.js */; };
+		CBC597521CBF7D900060206C /* SNBodyTemplate.html in Resources */ = {isa = PBXBuildFile; fileRef = CBC5972A1CBF7D900060206C /* SNBodyTemplate.html */; };
+		CBC597531CBF7D900060206C /* SNJavaBridge.js in Resources */ = {isa = PBXBuildFile; fileRef = CBC5972B1CBF7D900060206C /* SNJavaBridge.js */; };
+		CBC597541CBF7D900060206C /* StockBarCommonConfig.json in Resources */ = {isa = PBXBuildFile; fileRef = CBC5972C1CBF7D900060206C /* StockBarCommonConfig.json */; };
+		CBC597551CBF7D900060206C /* zepto.min.js in Resources */ = {isa = PBXBuildFile; fileRef = CBC5972D1CBF7D900060206C /* zepto.min.js */; };
+		CBC597561CBF7D900060206C /* SNImagePreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC5972F1CBF7D900060206C /* SNImagePreviewView.m */; };
+		CBC597571CBF7D900060206C /* SNNewsChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC597311CBF7D900060206C /* SNNewsChildViewController.m */; };
+		CBC597581CBF7D900060206C /* SNNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC597331CBF7D900060206C /* SNNewsViewController.m */; };
+		CBC597591CBF7D900060206C /* SNSyncImageOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC597351CBF7D900060206C /* SNSyncImageOperation.m */; };
+		CBC5975A1CBF7D900060206C /* SBArticleListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC597381CBF7D900060206C /* SBArticleListCell.m */; };
+		CBC5975B1CBF7D900060206C /* SBUserReplyToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC5973A1CBF7D900060206C /* SBUserReplyToolView.m */; };
+		CBC5975C1CBF7D900060206C /* SNLiveCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC5973C1CBF7D900060206C /* SNLiveCell.m */; };
+		CBC5975D1CBF7D900060206C /* SNStockStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC5973E1CBF7D900060206C /* SNStockStatusCell.m */; };
+		CBC5975E1CBF7D900060206C /* SNTagsView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC597401CBF7D900060206C /* SNTagsView.m */; };
+		CBC5975F1CBF7D900060206C /* SNYWCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC597421CBF7D900060206C /* SNYWCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,8 +53,6 @@
 		CBC596E91CBF76230060206C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CBC596EB1CBF76230060206C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CBC596EC1CBF76230060206C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		CBC596EE1CBF76230060206C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		CBC596EF1CBF76230060206C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		CBC596F21CBF76230060206C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CBC596F41CBF76230060206C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CBC596F71CBF76230060206C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +62,57 @@
 		CBC597061CBF77850060206C /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		CBC597081CBF77930060206C /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		CBC5970A1CBF77A00060206C /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		CBC5970C1CBF7D900060206C /* SBEmoji.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SBEmoji.bundle; sourceTree = "<group>"; };
+		CBC5970F1CBF7D900060206C /* sb_emoji.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sb_emoji.json; sourceTree = "<group>"; };
+		CBC597101CBF7D900060206C /* SBCommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBCommentCell.h; sourceTree = "<group>"; };
+		CBC597111CBF7D900060206C /* SBCommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBCommentCell.m; sourceTree = "<group>"; };
+		CBC597121CBF7D900060206C /* SBCommentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBCommentController.h; sourceTree = "<group>"; };
+		CBC597131CBF7D900060206C /* SBCommentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBCommentController.m; sourceTree = "<group>"; };
+		CBC597141CBF7D900060206C /* SBCommentView+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SBCommentView+Private.h"; sourceTree = "<group>"; };
+		CBC597151CBF7D900060206C /* SBCommentView+Private.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SBCommentView+Private.m"; sourceTree = "<group>"; };
+		CBC597161CBF7D900060206C /* SBCommentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBCommentView.h; sourceTree = "<group>"; };
+		CBC597171CBF7D900060206C /* SBCommentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBCommentView.m; sourceTree = "<group>"; };
+		CBC597181CBF7D900060206C /* SBEmojiModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBEmojiModel.h; sourceTree = "<group>"; };
+		CBC597191CBF7D900060206C /* SBEmojiModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBEmojiModel.m; sourceTree = "<group>"; };
+		CBC5971A1CBF7D900060206C /* SBNewsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBNewsController.h; sourceTree = "<group>"; };
+		CBC5971B1CBF7D900060206C /* SBNewsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBNewsController.m; sourceTree = "<group>"; };
+		CBC5971C1CBF7D900060206C /* SBReplyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBReplyView.h; sourceTree = "<group>"; };
+		CBC5971D1CBF7D900060206C /* SBReplyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBReplyView.m; sourceTree = "<group>"; };
+		CBC5971E1CBF7D900060206C /* SBStarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBStarView.h; sourceTree = "<group>"; };
+		CBC5971F1CBF7D900060206C /* SBStarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBStarView.m; sourceTree = "<group>"; };
+		CBC597211CBF7D900060206C /* SNAsyncImageOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNAsyncImageOperation.h; sourceTree = "<group>"; };
+		CBC597221CBF7D900060206C /* SNAsyncImageOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNAsyncImageOperation.m; sourceTree = "<group>"; };
+		CBC597231CBF7D900060206C /* SNBodyParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNBodyParser.h; sourceTree = "<group>"; };
+		CBC597241CBF7D900060206C /* SNBodyParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNBodyParser.m; sourceTree = "<group>"; };
+		CBC597251CBF7D900060206C /* SNContentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNContentController.h; sourceTree = "<group>"; };
+		CBC597261CBF7D900060206C /* SNContentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNContentController.m; sourceTree = "<group>"; };
+		CBC597281CBF7D900060206C /* SNBodyCSS.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = SNBodyCSS.css; sourceTree = "<group>"; };
+		CBC597291CBF7D900060206C /* SNBodyJS.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = SNBodyJS.js; sourceTree = "<group>"; };
+		CBC5972A1CBF7D900060206C /* SNBodyTemplate.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = SNBodyTemplate.html; sourceTree = "<group>"; };
+		CBC5972B1CBF7D900060206C /* SNJavaBridge.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = SNJavaBridge.js; sourceTree = "<group>"; };
+		CBC5972C1CBF7D900060206C /* StockBarCommonConfig.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = StockBarCommonConfig.json; sourceTree = "<group>"; };
+		CBC5972D1CBF7D900060206C /* zepto.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = zepto.min.js; sourceTree = "<group>"; };
+		CBC5972E1CBF7D900060206C /* SNImagePreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNImagePreviewView.h; sourceTree = "<group>"; };
+		CBC5972F1CBF7D900060206C /* SNImagePreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNImagePreviewView.m; sourceTree = "<group>"; };
+		CBC597301CBF7D900060206C /* SNNewsChildViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNNewsChildViewController.h; sourceTree = "<group>"; };
+		CBC597311CBF7D900060206C /* SNNewsChildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNNewsChildViewController.m; sourceTree = "<group>"; };
+		CBC597321CBF7D900060206C /* SNNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNNewsViewController.h; sourceTree = "<group>"; };
+		CBC597331CBF7D900060206C /* SNNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNNewsViewController.m; sourceTree = "<group>"; };
+		CBC597341CBF7D900060206C /* SNSyncImageOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNSyncImageOperation.h; sourceTree = "<group>"; };
+		CBC597351CBF7D900060206C /* SNSyncImageOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNSyncImageOperation.m; sourceTree = "<group>"; };
+		CBC597371CBF7D900060206C /* SBArticleListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBArticleListCell.h; sourceTree = "<group>"; };
+		CBC597381CBF7D900060206C /* SBArticleListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBArticleListCell.m; sourceTree = "<group>"; };
+		CBC597391CBF7D900060206C /* SBUserReplyToolView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBUserReplyToolView.h; sourceTree = "<group>"; };
+		CBC5973A1CBF7D900060206C /* SBUserReplyToolView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBUserReplyToolView.m; sourceTree = "<group>"; };
+		CBC5973B1CBF7D900060206C /* SNLiveCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNLiveCell.h; sourceTree = "<group>"; };
+		CBC5973C1CBF7D900060206C /* SNLiveCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNLiveCell.m; sourceTree = "<group>"; };
+		CBC5973D1CBF7D900060206C /* SNStockStatusCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNStockStatusCell.h; sourceTree = "<group>"; };
+		CBC5973E1CBF7D900060206C /* SNStockStatusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNStockStatusCell.m; sourceTree = "<group>"; };
+		CBC5973F1CBF7D900060206C /* SNTagsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNTagsView.h; sourceTree = "<group>"; };
+		CBC597401CBF7D900060206C /* SNTagsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNTagsView.m; sourceTree = "<group>"; };
+		CBC597411CBF7D900060206C /* SNYWCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNYWCell.h; sourceTree = "<group>"; };
+		CBC597421CBF7D900060206C /* SNYWCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNYWCell.m; sourceTree = "<group>"; };
+		CBC597671CBF80A10060206C /* StockNews-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "StockNews-Prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,10 +150,10 @@
 		CBC596E71CBF76230060206C /* StockNews */ = {
 			isa = PBXGroup;
 			children = (
+				CBC5970C1CBF7D900060206C /* SBEmoji.bundle */,
+				CBC5970D1CBF7D900060206C /* Class */,
 				CBC596EB1CBF76230060206C /* AppDelegate.h */,
 				CBC596EC1CBF76230060206C /* AppDelegate.m */,
-				CBC596EE1CBF76230060206C /* ViewController.h */,
-				CBC596EF1CBF76230060206C /* ViewController.m */,
 				CBC596F11CBF76230060206C /* Main.storyboard */,
 				CBC596F41CBF76230060206C /* Assets.xcassets */,
 				CBC596F61CBF76230060206C /* LaunchScreen.storyboard */,
@@ -91,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				CBC596E91CBF76230060206C /* main.m */,
+				CBC597671CBF80A10060206C /* StockNews-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -105,6 +183,94 @@
 				CBC597011CBF77000060206C /* SBModule.framework */,
 			);
 			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		CBC5970D1CBF7D900060206C /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				CBC5970E1CBF7D900060206C /* comment */,
+				CBC597201CBF7D900060206C /* news */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		CBC5970E1CBF7D900060206C /* comment */ = {
+			isa = PBXGroup;
+			children = (
+				CBC5970F1CBF7D900060206C /* sb_emoji.json */,
+				CBC597101CBF7D900060206C /* SBCommentCell.h */,
+				CBC597111CBF7D900060206C /* SBCommentCell.m */,
+				CBC597121CBF7D900060206C /* SBCommentController.h */,
+				CBC597131CBF7D900060206C /* SBCommentController.m */,
+				CBC597141CBF7D900060206C /* SBCommentView+Private.h */,
+				CBC597151CBF7D900060206C /* SBCommentView+Private.m */,
+				CBC597161CBF7D900060206C /* SBCommentView.h */,
+				CBC597171CBF7D900060206C /* SBCommentView.m */,
+				CBC597181CBF7D900060206C /* SBEmojiModel.h */,
+				CBC597191CBF7D900060206C /* SBEmojiModel.m */,
+				CBC5971A1CBF7D900060206C /* SBNewsController.h */,
+				CBC5971B1CBF7D900060206C /* SBNewsController.m */,
+				CBC5971C1CBF7D900060206C /* SBReplyView.h */,
+				CBC5971D1CBF7D900060206C /* SBReplyView.m */,
+				CBC5971E1CBF7D900060206C /* SBStarView.h */,
+				CBC5971F1CBF7D900060206C /* SBStarView.m */,
+			);
+			path = comment;
+			sourceTree = "<group>";
+		};
+		CBC597201CBF7D900060206C /* news */ = {
+			isa = PBXGroup;
+			children = (
+				CBC597211CBF7D900060206C /* SNAsyncImageOperation.h */,
+				CBC597221CBF7D900060206C /* SNAsyncImageOperation.m */,
+				CBC597231CBF7D900060206C /* SNBodyParser.h */,
+				CBC597241CBF7D900060206C /* SNBodyParser.m */,
+				CBC597251CBF7D900060206C /* SNContentController.h */,
+				CBC597261CBF7D900060206C /* SNContentController.m */,
+				CBC597271CBF7D900060206C /* SNFile */,
+				CBC5972E1CBF7D900060206C /* SNImagePreviewView.h */,
+				CBC5972F1CBF7D900060206C /* SNImagePreviewView.m */,
+				CBC597301CBF7D900060206C /* SNNewsChildViewController.h */,
+				CBC597311CBF7D900060206C /* SNNewsChildViewController.m */,
+				CBC597321CBF7D900060206C /* SNNewsViewController.h */,
+				CBC597331CBF7D900060206C /* SNNewsViewController.m */,
+				CBC597341CBF7D900060206C /* SNSyncImageOperation.h */,
+				CBC597351CBF7D900060206C /* SNSyncImageOperation.m */,
+				CBC597361CBF7D900060206C /* SNView */,
+			);
+			path = news;
+			sourceTree = "<group>";
+		};
+		CBC597271CBF7D900060206C /* SNFile */ = {
+			isa = PBXGroup;
+			children = (
+				CBC597281CBF7D900060206C /* SNBodyCSS.css */,
+				CBC597291CBF7D900060206C /* SNBodyJS.js */,
+				CBC5972A1CBF7D900060206C /* SNBodyTemplate.html */,
+				CBC5972B1CBF7D900060206C /* SNJavaBridge.js */,
+				CBC5972C1CBF7D900060206C /* StockBarCommonConfig.json */,
+				CBC5972D1CBF7D900060206C /* zepto.min.js */,
+			);
+			path = SNFile;
+			sourceTree = "<group>";
+		};
+		CBC597361CBF7D900060206C /* SNView */ = {
+			isa = PBXGroup;
+			children = (
+				CBC597371CBF7D900060206C /* SBArticleListCell.h */,
+				CBC597381CBF7D900060206C /* SBArticleListCell.m */,
+				CBC597391CBF7D900060206C /* SBUserReplyToolView.h */,
+				CBC5973A1CBF7D900060206C /* SBUserReplyToolView.m */,
+				CBC5973B1CBF7D900060206C /* SNLiveCell.h */,
+				CBC5973C1CBF7D900060206C /* SNLiveCell.m */,
+				CBC5973D1CBF7D900060206C /* SNStockStatusCell.h */,
+				CBC5973E1CBF7D900060206C /* SNStockStatusCell.m */,
+				CBC5973F1CBF7D900060206C /* SNTagsView.h */,
+				CBC597401CBF7D900060206C /* SNTagsView.m */,
+				CBC597411CBF7D900060206C /* SNYWCell.h */,
+				CBC597421CBF7D900060206C /* SNYWCell.m */,
+			);
+			path = SNView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,9 +330,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBC597441CBF7D900060206C /* sb_emoji.json in Resources */,
+				CBC597521CBF7D900060206C /* SNBodyTemplate.html in Resources */,
 				CBC596F81CBF76230060206C /* LaunchScreen.storyboard in Resources */,
 				CBC596F51CBF76230060206C /* Assets.xcassets in Resources */,
+				CBC597531CBF7D900060206C /* SNJavaBridge.js in Resources */,
 				CBC596F31CBF76230060206C /* Main.storyboard in Resources */,
+				CBC597501CBF7D900060206C /* SNBodyCSS.css in Resources */,
+				CBC597431CBF7D900060206C /* SBEmoji.bundle in Resources */,
+				CBC597511CBF7D900060206C /* SNBodyJS.js in Resources */,
+				CBC597541CBF7D900060206C /* StockBarCommonConfig.json in Resources */,
+				CBC597551CBF7D900060206C /* zepto.min.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,9 +351,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBC596F01CBF76230060206C /* ViewController.m in Sources */,
+				CBC5975B1CBF7D900060206C /* SBUserReplyToolView.m in Sources */,
+				CBC5975E1CBF7D900060206C /* SNTagsView.m in Sources */,
+				CBC597581CBF7D900060206C /* SNNewsViewController.m in Sources */,
+				CBC597461CBF7D900060206C /* SBCommentController.m in Sources */,
+				CBC597591CBF7D900060206C /* SNSyncImageOperation.m in Sources */,
+				CBC5975F1CBF7D900060206C /* SNYWCell.m in Sources */,
 				CBC596ED1CBF76230060206C /* AppDelegate.m in Sources */,
+				CBC597491CBF7D900060206C /* SBEmojiModel.m in Sources */,
+				CBC5974B1CBF7D900060206C /* SBReplyView.m in Sources */,
+				CBC5974D1CBF7D900060206C /* SNAsyncImageOperation.m in Sources */,
+				CBC5974F1CBF7D900060206C /* SNContentController.m in Sources */,
+				CBC597571CBF7D900060206C /* SNNewsChildViewController.m in Sources */,
+				CBC5975D1CBF7D900060206C /* SNStockStatusCell.m in Sources */,
+				CBC597471CBF7D900060206C /* SBCommentView+Private.m in Sources */,
+				CBC5974E1CBF7D900060206C /* SNBodyParser.m in Sources */,
+				CBC597481CBF7D900060206C /* SBCommentView.m in Sources */,
+				CBC597451CBF7D900060206C /* SBCommentCell.m in Sources */,
+				CBC5974A1CBF7D900060206C /* SBNewsController.m in Sources */,
+				CBC5974C1CBF7D900060206C /* SBStarView.m in Sources */,
+				CBC5975C1CBF7D900060206C /* SNLiveCell.m in Sources */,
+				CBC5975A1CBF7D900060206C /* SBArticleListCell.m in Sources */,
 				CBC596EA1CBF76230060206C /* main.m in Sources */,
+				CBC597561CBF7D900060206C /* SNImagePreviewView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,7 +489,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/StockNews/Frameworks",
 				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "StockNews/StockNews-Prefix.pch";
 				INFOPLIST_FILE = StockNews/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SN.StockNews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -310,7 +507,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/StockNews/Frameworks",
 				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "StockNews/StockNews-Prefix.pch";
 				INFOPLIST_FILE = StockNews/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SN.StockNews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -336,6 +536,7 @@
 				CBC596FE1CBF76230060206C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

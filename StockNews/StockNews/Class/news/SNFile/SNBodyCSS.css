@@ -1,0 +1,74 @@
+﻿@charset"utf-8";
+/** css Reset star like yahoo **/
+body, div, ul, ol, li, h1, h2, h3, h4, h5, h6, form, input, p, th, td, textarea { font-style: normal; margin: 0; padding: 0; list-style: none; vertical-align: middle; }
+html, body { font: normal normal 17px arial; min-width: 320px; }
+html, body { -webkit-touch-callout: none; -webkit-user-select: none; -webkit-text-size-adjust: none; color: #1d1d1d; background-color: #f2f2f2; min-width: 320px; overflow-x: hidden; }
+fieldset, img { border: 0; }
+ul, li { list-style: none; }
+a { color: #333333; cursor: pointer; text-decoration: none; }
+a:hover { text-decoration: none; }
+.clearfix:after { clear: both; height: 0; overflow: hidden; display: block; visibility: hidden; content: "\20"; }
+.news-wrapper { padding: 0 10px 10px 10px; }
+.shown { display: inherit !important; }
+.hidden { display: none !important; }
+section#news-content { -webkit-user-select: text;}
+section#news-content #news-title { font-size: 20px; margin-top: 19px; margin-bottom: 6px; line-height: 25px; color: #3f3f3f; }
+section#news-content .from { color: #808080; padding-bottom: 10px; border-bottom: 1px solid #ADA6A6; font-size: 14px; line-height: 28px; }
+section#news-content .from .author { padding-left: 5px; line-height: 28px; font-size: 15px;}
+
+section#news-content .from .news-comments{ font-size:13px; float: right; background-color: #2f5895; color: #fff; padding: 3px 5px; line-height: 18px;}
+
+section#news-content article {padding-bottom: 1em;}
+section#news-content article a { color: #2f5895; border-bottom: 1px dashed #2f5895; }
+section#news-content article a.link-stkd { color: #ffffff;font-weight:bold; position: absolute; right:4px; bottom:4px; width: 140px; height: 28px; line-height: 30px; overflow: hidden; border: 0px solid #333; border-radius: 8px; background-color: #666666;opacity : 0.9; text-align:center; }
+
+section#news-content article .relate-stocks { padding-top: 12px;}
+section#news-content article .relate-stocks a { color: #2f5895; border-bottom: 1px dashed #2f5895; margin-right: 6px; line-height: 25px; white-space: nowrap; }
+
+section#news-content .art-img { margin-top: 15px; padding: 1px; background: #CECACA; position:relative; }
+section#news-content .art-img div.image-placeholder-wrap { background-color: #F8F8F8; width: 100%; height: 250px; position: relative; }
+section#news-content .art-img img.news-image { width: 100%; vertical-align: middle; }
+section#news-content .art-img div.image-placeholder-wrap img.placeholder { position: absolute; width: 100%; height: 100%; left: 0%; top: 0%; margin-left: 0px; margin-top: 0px; }
+section#news-content .art-img span.tip { position: absolute; top: 0; left: 0; font-size: 12px; }
+
+article#article-body p { text-align: justify; text-indent: 0; line-height: 1.2em; color: #3f3f3f; }
+article#news-article #news-author { float: right; padding-right: 0px; line-height: 25px; color: #959595; font-size: 13px; }
+.news-wrapper b{font-weight:normal}
+/*之前table样式*/
+/*.tableBox { overflow-x:scroll; background-color: #ecf7fd; -webkit-overflow-scrolling: touch; width:100%;}*/
+/*.tableBoxTip { line-height:24px; font-size:12px; color:#666; }*/
+/*#article-body table { width: auto; border-collapse: collapse; border: 1px solid #c3c3c3; font-size: 14px; }*/
+/*#article-body table { width: auto; border-collapse: collapse; border: 1px solid #c3c3c3; font-size:14px; }*/
+/*#article-body table td, #article-body table th { border: 1px solid #c3c3c3; padding: 5px; white-space: nowrap; }*/
+
+/*分享样式*/
+.zwshare{ padding-top:15px; padding-bottom:0px; font-size:13px;}
+.zwshare a{ display: inline-block; border: 1px solid #D2D2D2; border-radius: 7px; height: 35px; line-height: 35px; padding: 0 8px; margin-right: 2px; color: #7D7D7D; overflow: hidden; vertical-align: middle; }
+.zwshare em{ display: inline-block; vertical-align: -3px; margin-right: 3px;}
+.zwshare .wx{ width: 20px; height: 16px; background: url(news_sn_wx.png); background-size: 20px 16px; }
+.zwshare .pyq{ width: 19px; height: 18px; background: url(news_sn_pyq.png); background-size: 19px 18px; }
+.zwshare .wb{ width: 19px; height: 16px; background: url(news_sn_wb.png); background-size: 19px 16px; }
+
+/*table样式*/
+.zwtable{ clear: both; }
+.zwtable .tablec{ position: relative; }
+.zwtable .tablec .tablecbody{ max-width: 100%; overflow-x:scroll; -webkit-overflow-scrolling: touch; }
+.zwtable .tablec .tablemovetipr{ position: absolute; right: 0; width: 10px; background-color: RGB_A(0,0,0,.4); display: none; z-index: 2; }
+.zwtable .tablec .tablemovetipr em{ position: absolute;right: 1px;top: 50%;width: 8px;height: 15px;background: url(news_sn_right_array.png) no-repeat 0 0;background-size: 8px 15px;margin-top: -7px;}
+.zwtable .tablec .tablemovetipl{position: absolute;left: 0;width: 10px;background-color: RGB_A(0,0,0,.4);display: none;z-index: 2;}
+.zwtable .tablec .tablemovetipl em{position: absolute;right: 1px;top: 50%;margin-top: -7px;width: 8px;height: 15px;background: url(news_sn_right_array.png) no-repeat 0 0;background-size: 8px 15px;transform: rotate(180deg); -webkit-transform: rotate(180deg);}
+.zwtable .tabletip{color: #959595;font-size: 13px;}
+.zwtable table{border-collapse: collapse;width: auto;font-size: 14px;}
+.zwtable table td,.zwtable table th{border: 1px solid #C3C3C3;padding: 5px;white-space: nowrap;font-weight: normal;}
+
+.xgnews{ font-size: 15px; padding-top: 20px; }
+#xgnewst{ border-left: 7px solid #FF4901; padding-left: 8px; }
+.xgnews ul{ list-style: none;padding-top: 10px;}
+.xgnews ul li a{ text-decoration: none; color: #2f5895; }
+.xgnews ul li{ padding: 5px 0; border-bottom: 1px solid #D2D2D2; line-height: 140%;}
+
+.newsAd { padding-top: 12px; }
+.ad_image { width:100%; height:auto; background: #CECACA;}
+
+
+

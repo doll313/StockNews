@@ -7,16 +7,26 @@
 //
 
 #import "AppDelegate.h"
+#import "SNNewsViewController.h"
 
 @interface AppDelegate ()
-
+@property (strong, nonatomic) UINavigationController *navCtrl;
 @end
 
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    // 代码方式初始化，先注释掉。现在用storyboard来初始化
+//    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+//
+//    SNNewsViewController *newsCtrl = [[SNNewsViewController alloc] init];
+//    self.navCtrl = [[UINavigationController alloc] initWithRootViewController:newsCtrl];
+//    self.window.rootViewController = self.navCtrl;
+//    [self.window addSubview:self.navCtrl.view];
+//    [self.window makeKeyAndVisible];
+
+
     return YES;
 }
 
