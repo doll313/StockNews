@@ -21,7 +21,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         _timeLbl = [[UILabel alloc] init];
-        _timeLbl.textColor = [UIColor blueColor];
+        _timeLbl.textColor = RGB(49,111,201);
         _timeLbl.font = [UIFont systemFontOfSize:12];
         [self.contentView addSubview:_timeLbl];
         

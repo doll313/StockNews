@@ -10,7 +10,7 @@
 #import "SNNewsViewController.h"
 
 @interface AppDelegate ()
-@property (strong, nonatomic) UINavigationController *navCtrl;
+@property (strong, nonatomic) IBOutlet UINavigationController *navCtrl;
 @end
 
 @implementation AppDelegate
@@ -25,8 +25,6 @@
 //    self.window.rootViewController = self.navCtrl;
 //    [self.window addSubview:self.navCtrl.view];
 //    [self.window makeKeyAndVisible];
-
-
     return YES;
 }
 

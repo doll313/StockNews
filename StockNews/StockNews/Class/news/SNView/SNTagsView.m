@@ -25,6 +25,7 @@
 - (instancetype)initWithChannelList:(NSArray *)channelList {
     self = [super init];
     if (self) {
+        self.backgroundColor = [UIColor whiteColor];
         _channelList = channelList;
         
         _tagsScrollView = [[UIScrollView alloc] initWithFrame:CGRectZero];
@@ -56,10 +57,10 @@
         self.tagsScrollView.contentSize = CGSizeMake(TITLE_WIDTH * self.channelList.count, self.tagsScrollView.height);
         
         UILabel *lable = [self.titleArray firstObject];
-        lable.textColor = [UIColor blueColor];
+        lable.textColor = RGB(49,111,201);
         
         _sepLine = [[UIView alloc] init];
-        _sepLine.backgroundColor = [UIColor blueColor];
+        _sepLine.backgroundColor = RGB(49,111,201);
         [self.tagsScrollView addSubview:_sepLine];
         _sepLine.frame = CGRectMake(TITLE_WIDTH * lable.tag + SCROLL_PADDING, 38, TITLE_WIDTH - 2 * SCROLL_PADDING, 2);
         _beforeMinX = _sepLine.x;
@@ -80,7 +81,7 @@
         temlabel.textColor = [UIColor blackColor];
     }];
     
-    titleLbl.textColor = [UIColor blueColor];
+    titleLbl.textColor = RGB(49,111,201);
     [UIView animateWithDuration:0.3 animations:^{
         [_sepLine sb_setMinX:titleLbl.tag * TITLE_WIDTH + SCROLL_PADDING];
         _beforeMinX = _sepLine.x;

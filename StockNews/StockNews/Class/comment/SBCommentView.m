@@ -80,7 +80,7 @@
     UILabel *commentCountLbl = [[UILabel alloc] initWithFrame:CGRectZero];
     commentCountLbl.textColor = [UIColor whiteColor];
     commentCountLbl.font = [UIFont systemFontOfSize:14];
-    commentCountLbl.backgroundColor = [UIColor blueColor];
+    commentCountLbl.backgroundColor = RGB(49,111,201);
     [sHeader addSubview:commentCountLbl];
     
     SBTableData *data = [self.tableView dataOfSection:0];

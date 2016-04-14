@@ -85,7 +85,7 @@
         _replyTextView.textContainerInset = UIEdgeInsetsMake(0, 0, 0, 0);
         _replyTextView.textContainer.lineBreakMode = NSLineBreakByWordWrapping;
         // 设置link的样式
-        _replyTextView.linkTextAttributes = @{NSForegroundColorAttributeName: [UIColor blueColor],
+        _replyTextView.linkTextAttributes = @{NSForegroundColorAttributeName: RGB(49,111,201),
                                               NSUnderlineColorAttributeName: [UIColor blackColor],
                                               NSUnderlineStyleAttributeName: @(NSUnderlinePatternDash)};
         [self.contentView addSubview:_replyTextView];

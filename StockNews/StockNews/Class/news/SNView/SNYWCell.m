@@ -33,7 +33,7 @@
         [self.contentView addSubview:_titleLbl];
         
         _commentNumLbl = [[UILabel alloc] init];
-        _commentNumLbl.textColor = [UIColor blueColor];
+        _commentNumLbl.textColor = RGB(49,111,201);
         _commentNumLbl.font = [UIFont systemFontOfSize:12];
         [self.contentView addSubview:_commentNumLbl];
         

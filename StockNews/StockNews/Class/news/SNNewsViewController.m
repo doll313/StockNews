@@ -21,6 +21,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"stock_navi_bg"] forBarMetrics:UIBarMetricsDefault];
+    
     self.title = @"资讯";
     
     self.channelList = @[@"要闻", @"直播", @"个股", @"看盘", @"滚动", @"公司", @"基金", @"股市播报", @"大盘", @"交易提示", @"产经新闻", @"报刊头条", @"美股要闻", @"全球股市"];
