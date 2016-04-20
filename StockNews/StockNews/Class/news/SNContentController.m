@@ -29,6 +29,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"stock_navigation_back"] highlightedImage:[UIImage imageNamed:@"stock_navigation_back"]]];
+    self.navigationItem.backBarButtonItem.title = @"";
+    
     _queue = [[NSOperationQueue alloc] init];
     [_queue setMaxConcurrentOperationCount:2];
     

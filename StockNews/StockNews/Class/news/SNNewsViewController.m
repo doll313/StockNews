@@ -22,8 +22,8 @@
     [super viewDidLoad];
     
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"stock_navi_bg_128"] forBarMetrics:UIBarMetricsDefault];
-    
-    self.title = @"资讯";
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"stock_navigation_back"] highlightedImage:[UIImage imageNamed:@"stock_navigation_back"]]];
+    self.navigationItem.backBarButtonItem.title = @"";
     
     self.channelList = @[@"要闻", @"直播", @"个股", @"看盘", @"滚动", @"公司", @"基金", @"股市播报", @"大盘", @"交易提示", @"产经新闻", @"报刊头条", @"美股要闻", @"全球股市"];
     
