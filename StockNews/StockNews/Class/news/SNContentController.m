@@ -20,8 +20,8 @@
 @property (nonatomic, strong)UIWebView *contentWebview;
 @property (nonatomic, strong)SBHttpDataLoader *loader;
 @property (nonatomic, strong)DataItemResult *result;
-@property (nonatomic, strong)UIButton *commentBtn;
 @property (nonatomic, strong)NSOperationQueue *queue;
+@property (nonatomic, strong)UIImageView *toolImgView;
 @end
 
 @implementation SNContentController
@@ -43,24 +43,35 @@
     _contentWebview.delegate = self;
     [self.view addSubview:_contentWebview];
     
-    _commentBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [_commentBtn setTitle:@"评论" forState:UIControlStateNormal];
-    _commentBtn.layer.cornerRadius = 5;
-    _commentBtn.titleLabel.font = [UIFont systemFontOfSize:14];
-    _commentBtn.layer.masksToBounds = YES;
-    _commentBtn.layer.borderWidth = 1;
-    [_commentBtn setBackgroundColor:[UIColor colorWithWhite:0 alpha:0.5]];
-    [_commentBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [_commentBtn addTarget:self action:@selector(enterCommentList:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:_commentBtn];
+    [self initToolView];
+}
+
+- (void)initToolView {
+    _toolImgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"stock_navi_bg_128"]];
+    _toolImgView.height = 44;
+    _toolImgView.userInteractionEnabled = YES;
+    [self.view addSubview:_toolImgView];
+    
+    UIButton *commentBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [commentBtn setTitle:@"评论" forState:UIControlStateNormal];
+    commentBtn.titleLabel.font = [UIFont systemFontOfSize:14];
+    commentBtn.layer.masksToBounds = YES;
+    commentBtn.layer.cornerRadius = 5;
+    commentBtn.layer.borderColor = RGB(49,111,201).CGColor;
+    commentBtn.layer.borderWidth = 1;
+    [commentBtn setTitleColor:RGB(49,111,201) forState:UIControlStateNormal];
+    [commentBtn addTarget:self action:@selector(enterCommentList:) forControlEvents:UIControlEventTouchUpInside];
+    [_toolImgView addSubview:commentBtn];
+    commentBtn.frame = CGRectMake(self.view.width - 60, 5, _toolImgView.height,  _toolImgView.height - 10);
 }
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     
     self.contentWebview.frame = self.view.bounds;
+    self.contentWebview.height -= self.toolImgView.height;
     
-    _commentBtn.frame = CGRectMake(self.view.width - 80, self.view.height - 80, 40, 40);
+    self.toolImgView.bottom = self.view.bottom;
 }
 
 - (void)dealloc {
