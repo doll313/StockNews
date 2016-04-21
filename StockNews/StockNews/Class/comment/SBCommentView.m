@@ -75,16 +75,16 @@
 
 - (UIView *)commentsHeaderView {
     UIView *sHeader = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.tableView.width, 44)];
-    sHeader.backgroundColor = [UIColor lightGrayColor];
+    sHeader.backgroundColor = [UIColor whiteColor];
     
     UILabel *commentCountLbl = [[UILabel alloc] initWithFrame:CGRectZero];
-    commentCountLbl.textColor = [UIColor whiteColor];
-    commentCountLbl.font = [UIFont systemFontOfSize:14];
-    commentCountLbl.backgroundColor = RGB(49,111,201);
+    commentCountLbl.textColor = [UIColor blackColor];
+    commentCountLbl.font = [UIFont systemFontOfSize:13];
+    commentCountLbl.backgroundColor = [UIColor clearColor];
     [sHeader addSubview:commentCountLbl];
     
     SBTableData *data = [self.tableView dataOfSection:0];
-    commentCountLbl.text = [NSString stringWithFormat:@" %@ 评论 ", @(data.tableDataResult.maxCount)];
+    commentCountLbl.text = [NSString stringWithFormat:@"评论 %@", @(data.tableDataResult.maxCount)];
     
     [commentCountLbl mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.mas_equalTo(sHeader.mas_centerY);
@@ -92,14 +92,23 @@
     }];
     
     _lookCommentBtn = [UIButton buttonWithType:UIButtonTypeSystem];
-    [_lookCommentBtn setTitle:[NSString stringWithFormat:@"查看%@评论", (self.sortType == SBV3ReplysSortDES) ? @"最早" : @"最近"] forState:UIControlStateNormal];
-    [_lookCommentBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    _lookCommentBtn.titleLabel.font = [UIFont systemFontOfSize:13];
+    [_lookCommentBtn setTitle:[NSString stringWithFormat:@"%@评论", (self.sortType == SBV3ReplysSortDES) ? @"最早" : @"最近"] forState:UIControlStateNormal];
+    [_lookCommentBtn setTitleColor:RGB(49,111,201) forState:UIControlStateNormal];
     [_lookCommentBtn addTarget:self action:@selector(lookCommentClick:) forControlEvents:UIControlEventTouchUpInside];
     [sHeader addSubview:_lookCommentBtn];
     [_lookCommentBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.mas_equalTo(sHeader.mas_centerY);
-        make.right.equalTo(@-10);
+        make.right.equalTo(@-20);
     }];
+    
+    UIImageView *bottomLine = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"t1_cell_seperate_line"]];
+    bottomLine.frame = CGRectMake(0, sHeader.height - 1, sHeader.width, 1);
+    [sHeader addSubview:bottomLine];
+    
+    UIImageView *arrow = [[UIImageView alloc] initWithFrame:CGRectMake(sHeader.width - 20, sHeader.height / 2 - 5, 10, 10)];
+    arrow.image = [UIImage imageNamed:@"t1_stock_tips_list_into"];
+    [sHeader addSubview:arrow];
     
     return sHeader;
 }
@@ -107,10 +116,10 @@
 - (void)lookCommentClick:(id)sender {
     if (self.sortType == SBV3ReplysSortASC) {
         self.sortType = SBV3ReplysSortDES;
-        [_lookCommentBtn setTitle:@"查看最早评论" forState:UIControlStateNormal];
+        [_lookCommentBtn setTitle:@"最早评论" forState:UIControlStateNormal];
     } else {
         self.sortType = SBV3ReplysSortASC;
-        [_lookCommentBtn setTitle:@"查看最近评论" forState:UIControlStateNormal];
+        [_lookCommentBtn setTitle:@"最近评论" forState:UIControlStateNormal];
     }
     [self refreshComments];
 }

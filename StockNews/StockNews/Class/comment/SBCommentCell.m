@@ -38,7 +38,7 @@
         
         _userNameLbl = [[UILabel alloc] init];
         _userNameLbl.textColor = [UIColor blackColor];
-        _userNameLbl.font = [UIFont systemFontOfSize:12];
+        _userNameLbl.font = [UIFont systemFontOfSize:13];
         [self.contentView addSubview:_userNameLbl];
        
         _infuLbl = [[UILabel alloc] init];
@@ -80,7 +80,7 @@
         _replyTextView = [[UITextView alloc] init];
         _replyTextView.scrollEnabled = NO;
         _replyTextView.editable = NO;
-        _replyTextView.backgroundColor = [UIColor yellowColor];
+        _replyTextView.backgroundColor = [UIColor clearColor];
         _replyTextView.delegate = self;
         _replyTextView.textContainerInset = UIEdgeInsetsMake(0, 0, 0, 0);
         _replyTextView.textContainer.lineBreakMode = NSLineBreakByWordWrapping;
@@ -166,6 +166,7 @@
 
     DataItemDetail *detail = [self.cellDetail getDetail:JNV3_REPLY_USER];
     NSString *nickName = [detail getString:JNV3_USER_NICKNAME];
+    self.userNameLbl.textColor = nickName.length > 0 ? RGB(49,111,201) : [UIColor blackColor];
     self.userNameLbl.text = (nickName.length > 0 ? nickName : [self.cellDetail getString:JNV3_REPLY_IP]);
     
     [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://avator.eastmoney.com/qface/%@/120",[detail getString:JNV3_USER_ID] ]] placeholderImage:[UIImage imageWithColor:[UIColor grayColor]]];

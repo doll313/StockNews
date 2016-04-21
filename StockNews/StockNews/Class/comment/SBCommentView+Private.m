@@ -29,7 +29,7 @@
     style.lineSpacing = 0;
     style.paragraphSpacing = 0;
     style.lineBreakMode = NSLineBreakByWordWrapping;
-    NSDictionary *atts = @{NSFontAttributeName : [UIFont systemFontOfSize:15], NSForegroundColorAttributeName : [UIColor redColor], NSParagraphStyleAttributeName : style,};
+    NSDictionary *atts = @{NSFontAttributeName : [UIFont systemFontOfSize:15], NSForegroundColorAttributeName : [UIColor blackColor], NSParagraphStyleAttributeName : style,};
     
     NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc] initWithString:[string html2text] attributes:atts];
     // 匹配中括号里任意的中文,倒序是由于之后会将文字占位符替换为图片，这个操作会改变文字的长度
