@@ -42,6 +42,7 @@
     [self.actView setSize:CGSizeMake(50, 50)];
     self.actView.center = self.center;
     self.bigImageView.center = self.center;
+    self.bigImageView.bounds = self.frame;
 }
 
 // 展示大图，传image进去
@@ -52,7 +53,6 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.actView stopAnimating];
         self.bigImageView.image = bigImage;
-        [self.bigImageView sizeToFit];
     });
 }
 
@@ -62,7 +62,6 @@
     [UIView animateWithDuration:0.5
                      animations:^{
                          self.bigImageView.transform = CGAffineTransformScale(self.bigImageView.transform, 0.001, 0.001);
-                         self.bigImageView.size = CGSizeMake(0, 0);
                      } completion:^(BOOL finished) {
                          if (finished) {
                              [self removeFromSuperview];
