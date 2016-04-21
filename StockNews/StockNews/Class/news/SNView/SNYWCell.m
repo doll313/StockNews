@@ -14,7 +14,7 @@
 @property (nonatomic, strong)UIImageView *imgView;
 @property (nonatomic, strong)UILabel *titleLbl;         // 标题
 @property (nonatomic, strong)UILabel *commentNumLbl;    // 评论数
-
+@property (nonatomic, strong)UILabel *simLbl;           // 显示专题
 @end
 
 @implementation SNYWCell
@@ -37,6 +37,16 @@
         _commentNumLbl.font = [UIFont systemFontOfSize:12];
         [self.contentView addSubview:_commentNumLbl];
         
+        _simLbl = [[UILabel alloc] init];
+        _simLbl.font = [UIFont systemFontOfSize:11];
+        _simLbl.textColor = [UIColor redColor];
+        _simLbl.text = @"";
+        _simLbl.layer.borderColor = [UIColor redColor].CGColor;
+        _simLbl.layer.borderWidth = 0.5;
+        _simLbl.layer.cornerRadius = 2;
+        [self.contentView addSubview:_simLbl];
+        _simLbl.hidden = YES;
+        
         [self.imgView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.and.top.equalTo(self.contentView).with.offset(APPCONFIG_UI_TABLE_PADDING);
             make.bottom.equalTo(self.contentView).with.offset(-APPCONFIG_UI_TABLE_PADDING);
@@ -47,6 +57,11 @@
             make.top.equalTo(self.contentView).with.offset(APPCONFIG_UI_TABLE_PADDING);
             make.left.equalTo(self.imgView.mas_right).with.offset(APPCONFIG_UI_TABLE_PADDING);
             make.right.equalTo(self.contentView).with.offset(-APPCONFIG_UI_TABLE_PADDING);
+        }];
+        
+        [self.simLbl mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.titleLbl.mas_bottom);
+            make.left.equalTo(self.titleLbl);
         }];
         
         [self.commentNumLbl mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -75,6 +90,13 @@
     [self.imgView sd_setImageWithURL:[NSURL URLWithString:[self.cellDetail getString:SN_SUMMARY_LIST_IMAGE]] placeholderImage:[UIImage imageWithColor:[UIColor grayColor]]];
     self.titleLbl.text = [self.cellDetail getString:SN_SUMMARY_LIST_BASICTITLE];
     self.commentNumLbl.text = [NSString stringWithFormat:@"%@评论", [self.cellDetail getString:SN_SUMMARY_LIST_COMMENTSIZE]];
+    
+    if ([[self.cellDetail getString:SN_TOPIC_LIST_SIMTPYE] isEqualToString:@"2"] && [self.cellDetail getString:SN_SUMMARY_LIST_SIMTPYE].length > 0) {
+        _simLbl.hidden = NO;
+        _simLbl.text = [self.cellDetail getString:SN_SUMMARY_LIST_SIMTPYE];
+    } else {
+        _simLbl.hidden = YES;
+    }
 }
 
 @end

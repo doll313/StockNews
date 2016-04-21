@@ -14,15 +14,17 @@
 @interface SBCommentView()
 @property (nonatomic, strong)UIButton *lookCommentBtn;
 @property (nonatomic, assign)SBV3ReplysSort sortType;
+@property (nonatomic, copy) NSString *foward_count;
 @end
 
 @implementation SBCommentView
 
-- (instancetype)initWithPostId:(NSString *)postid type:(NSInteger)type {
+- (instancetype)initWithPostId:(NSString *)postid type:(NSInteger)type foward_count:(NSString *)foward_count {
     self = [super init];
     if (self) {
         _model = [[SBEmojiModel alloc] init];
-        _sortType = SBV3ReplysSortDES;
+        _sortType = SBV3ReplysSortASC;
+        _foward_count = foward_count;
         
         _tableView = [[SBTableView alloc] initWithStyle:NO];
         _tableView.ctrl = self.ctrl;
@@ -84,7 +86,8 @@
     [sHeader addSubview:commentCountLbl];
     
     SBTableData *data = [self.tableView dataOfSection:0];
-    commentCountLbl.text = [NSString stringWithFormat:@"评论 %@", @(data.tableDataResult.maxCount)];
+    
+    commentCountLbl.text = [NSString stringWithFormat:@"评论 %@ 转发 %@", @(data.tableDataResult.maxCount), _foward_count];
     
     [commentCountLbl mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.mas_equalTo(sHeader.mas_centerY);
