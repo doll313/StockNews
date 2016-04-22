@@ -21,7 +21,7 @@
     
     DataItemDetail *detail = (DataItemDetail *)[self.urlAction objectForKey:@"detail"];
     self.sb = [[SBCommentView alloc] initWithPostId:[detail getString:__SN_BIGNEWS_LIST_NEWSID] type:[[detail getString:@"ty"] intValue] foward_count:[detail getString:@"foward_count"]];
-    self.sb.backgroundColor = [UIColor greenColor];
+    self.sb.backgroundColor = [UIColor whiteColor];
     self.sb.ctrl = self;
     [self.view addSubview:self.sb];
 }
