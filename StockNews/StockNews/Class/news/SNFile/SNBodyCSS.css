@@ -42,12 +42,12 @@ article#news-article #news-author { float: right; padding-right: 0px; line-heigh
 /*#article-body table td, #article-body table th { border: 1px solid #c3c3c3; padding: 5px; white-space: nowrap; }*/
 
 /*分享样式*/
-.zwshare{ padding-top:15px; padding-bottom:0px; font-size:13px;}
+/*.zwshare{ padding-top:15px; padding-bottom:0px; font-size:13px;}
 .zwshare a{ display: inline-block; border: 1px solid #D2D2D2; border-radius: 7px; height: 35px; line-height: 35px; padding: 0 8px; margin-right: 2px; color: #7D7D7D; overflow: hidden; vertical-align: middle; }
 .zwshare em{ display: inline-block; vertical-align: -3px; margin-right: 3px;}
 .zwshare .wx{ width: 20px; height: 16px; background: url(news_sn_wx.png); background-size: 20px 16px; }
 .zwshare .pyq{ width: 19px; height: 18px; background: url(news_sn_pyq.png); background-size: 19px 18px; }
-.zwshare .wb{ width: 19px; height: 16px; background: url(news_sn_wb.png); background-size: 19px 16px; }
+.zwshare .wb{ width: 19px; height: 16px; background: url(news_sn_wb.png); background-size: 19px 16px; }    */
 
 /*table样式*/
 .zwtable{ clear: both; }
