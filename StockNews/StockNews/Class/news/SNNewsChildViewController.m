@@ -50,10 +50,13 @@
 
         NSString *channelName = @"";
         if (__self.channelNum == 0) {
+            // 要闻
             channelName = @"ywjh";
         } else if(__self.channelNum == 1) {
+            // 直播
             channelName = @"zhibo";
         } else if(__self.channelNum == 2) {
+            // 个股
             channelName = @"ggdj";
         } else if(__self.channelNum == 3) {
             return [SBV3Process sbset_sepcial_blog_list:tableViewData.pageAt type:0 delegate:tableViewData];

@@ -9,12 +9,11 @@
 #import "SNTagsView.h"
 
 #define SCROLL_HEIGHT   40
-#define TITLE_WIDTH     70
-#define SCROLL_PADDING  4
+#define PADDING         10
 
 @interface SNTagsView()
 @property (nonatomic, strong)UIScrollView *tagsScrollView;
-@property (nonatomic, strong)UIView *sepLine;
+@property (nonatomic, strong)UIImageView *backgroundImg;
 @property (nonatomic, strong)NSArray *titleArray;
 @property (nonatomic, assign)NSInteger beforeMinX;
 @property (nonatomic, strong)NSArray *channelList;
@@ -25,7 +24,7 @@
 - (instancetype)initWithChannelList:(NSArray *)channelList {
     self = [super init];
     if (self) {
-        self.backgroundColor = [UIColor whiteColor];
+        self.backgroundColor = [UIColor clearColor];
         _channelList = channelList;
         
         _tagsScrollView = [[UIScrollView alloc] initWithFrame:CGRectZero];
@@ -40,30 +39,34 @@
             make.height.equalTo(@SCROLL_HEIGHT);
         }];
         
+        _backgroundImg = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"newslist_item_bg"]];
+        _backgroundImg.image = [_backgroundImg.image stretchableImageWithLeftCapWidth:_backgroundImg.width / 2 topCapHeight:_backgroundImg.size.height / 2];
+        [self.tagsScrollView addSubview:_backgroundImg];
+        
         NSMutableArray *arr = [[NSMutableArray alloc] init];
+        CGFloat locationX = 0;
         for (int i = 0; i < _channelList.count; i++) {
-            UILabel *titleLbl = [[UILabel alloc] initWithFrame:CGRectMake(TITLE_WIDTH * i, 0, TITLE_WIDTH, SCROLL_HEIGHT)];
+            UILabel *titleLbl = [[UILabel alloc] initWithFrame:CGRectMake(0, 12, 0, 16)];
             titleLbl.text = self.channelList[i];
             titleLbl.textAlignment = NSTextAlignmentCenter;
-            titleLbl.textColor = [UIColor blackColor];
-            titleLbl.font = [UIFont systemFontOfSize:16];
+            titleLbl.textColor = [UIColor whiteColor];
+            titleLbl.font = [UIFont systemFontOfSize:14];
             titleLbl.tag = i;
             titleLbl.userInteractionEnabled = YES;
             [titleLbl addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(titleClick:)]];
+            [titleLbl sizeToFit];
+            titleLbl.left = PADDING + locationX;
             [self.tagsScrollView addSubview:titleLbl];
             [arr addObject:titleLbl];
+            locationX += (titleLbl.width + 2 * PADDING);
         }
+        
         _titleArray = [arr mutableCopy];
-        self.tagsScrollView.contentSize = CGSizeMake(TITLE_WIDTH * self.channelList.count, self.tagsScrollView.height);
+        self.tagsScrollView.contentSize = CGSizeMake(locationX, self.tagsScrollView.height);
         
-        UILabel *lable = [self.titleArray firstObject];
-        lable.textColor = RGB(49,111,201);
-        
-        _sepLine = [[UIView alloc] init];
-        _sepLine.backgroundColor = RGB(49,111,201);
-        [self.tagsScrollView addSubview:_sepLine];
-        _sepLine.frame = CGRectMake(TITLE_WIDTH * lable.tag + SCROLL_PADDING, 38, TITLE_WIDTH - 2 * SCROLL_PADDING, 2);
-        _beforeMinX = _sepLine.x;
+        UILabel *titleLbl = [self.titleArray firstObject];
+        _backgroundImg.frame = CGRectMake(titleLbl.left - 5, (SCROLL_HEIGHT - _backgroundImg.height) / 2, titleLbl.width + 10, _backgroundImg.height);
+        _beforeMinX = _backgroundImg.x;
     }
     return self;
 }
@@ -76,15 +79,9 @@
 - (void)titleAction:(NSInteger)index {
     UILabel *titleLbl = self.titleArray[index];
     
-    [self.titleArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        UILabel *temlabel = (UILabel *)self.titleArray[idx];
-        temlabel.textColor = [UIColor blackColor];
-    }];
-    
-    titleLbl.textColor = RGB(49,111,201);
     [UIView animateWithDuration:0.3 animations:^{
-        [_sepLine sb_setMinX:titleLbl.tag * TITLE_WIDTH + SCROLL_PADDING];
-        _beforeMinX = _sepLine.x;
+        _backgroundImg.frame = CGRectMake(titleLbl.left - 5, (SCROLL_HEIGHT - _backgroundImg.height) / 2, titleLbl.width + 10, _backgroundImg.height);
+        _beforeMinX = self.backgroundImg.x;
     }];
     
     CGFloat offsetx = titleLbl.center.x - self.tagsScrollView.frame.size.width * 0.5;
