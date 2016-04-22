@@ -89,7 +89,12 @@
     
     [self.imgView sd_setImageWithURL:[NSURL URLWithString:[self.cellDetail getString:SN_SUMMARY_LIST_IMAGE]] placeholderImage:[UIImage imageWithColor:[UIColor grayColor]]];
     self.titleLbl.text = [self.cellDetail getString:SN_SUMMARY_LIST_BASICTITLE];
-    self.commentNumLbl.text = [NSString stringWithFormat:@"%@评论", [self.cellDetail getString:SN_SUMMARY_LIST_COMMENTSIZE]];
+    NSInteger commentCount = [[self.cellDetail getString:SN_SUMMARY_LIST_COMMENTSIZE] intValue];
+    if (commentCount > 0) {
+        self.commentNumLbl.text = [NSString stringWithFormat:@"%@评论", [self.cellDetail getString:SN_SUMMARY_LIST_COMMENTSIZE]];
+    } else {
+        self.commentNumLbl.text = @"";
+    }
     
     if ([[self.cellDetail getString:SN_TOPIC_LIST_SIMTPYE] isEqualToString:@"2"] && [self.cellDetail getString:SN_SUMMARY_LIST_SIMTPYE].length > 0) {
         _simLbl.hidden = NO;
