@@ -106,7 +106,7 @@
     headerView.backgroundColor = [UIColor whiteColor];
     
     UIButton *showButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    showButton.frame = CGRectMake(10, 8, 54, 28);
+    showButton.frame = CGRectMake(10, 10, 54, 24);
     showButton.titleLabel.font = [UIFont systemFontOfSize:12];
     [showButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [showButton setBackgroundColor:RGB(49,111,201)];
