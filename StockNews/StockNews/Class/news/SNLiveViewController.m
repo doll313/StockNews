@@ -1,35 +1,31 @@
 //
-//  SNNewsChildViewController.m
-//  IosDemo
+//  SNLiveViewController.m
+//  StockNews
 //
-//  Created by MengWang on 16/3/21.
+//  Created by MengWang on 16/4/27.
 //  Copyright © 2016年 YukiWang. All rights reserved.
 //
 
-#import "SNNewsChildViewController.h"
+#import "SNLiveViewController.h"
 #import <SBBusiness/SNDataProcess.h>
 #import "SBCommentView+Private.h"
-#import <SBBusiness/SBV3Process.h>
 #import <SBModule/SBURLAction.h>
 #import <SBBusiness/SNJSONNODE.h>
 #import <SBBusiness/SBTimeManager.h>
 #import <SBModule/STORE.h>
-#import "SNNewsManager.h"
+#import "SNLiveCell.h"
 
-@interface SNNewsChildViewController ()
+@interface SNLiveViewController ()
 @property (nonatomic, strong)SBTableView *tableView;
 @property (nonatomic, strong)NSMutableArray *dateArray;
-@property (nonatomic, strong)SNNewsManager *manager;
 @end
 
-@implementation SNNewsChildViewController
+@implementation SNLiveViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     _dateArray = [[NSMutableArray alloc] init];
-    _manager = [[SNNewsManager alloc] initWithTitleName:self.titleName];
-    
     [self tableDidLoad];
 }
 
@@ -59,14 +55,11 @@
             [__self.dateArray removeAllObjects];
         }
         
-        if (self.manager.column.length == 0 && self.manager.channelName.length == 0) {
-            return [SBV3Process sbset_sepcial_blog_list:tableViewData.pageAt type:0 delegate:tableViewData];
+        if (__self.column.length == 0 && __self.channelName.length > 0) {
+            return [SNDataProcess snget_important_news_list:minid encode:__self.channelName delegate:tableViewData];
         }
         
-        if (self.manager.column.length > 0 && self.manager.channelName.length == 0) {
-            return [SNDataProcess snget_news_list:minid column:__self.manager.column delegate:tableViewData];
-        }
-        return [SNDataProcess snget_important_news_list:minid encode:__self.manager.channelName delegate:tableViewData];
+        return [SNDataProcess snget_news_list:minid column:__self.column delegate:tableViewData];
     };
     
     self.tableView.receiveData= ^(SBTableView *tableView ,SBTableData *tableViewData, DataItemResult *result) {
@@ -74,40 +67,11 @@
             return;
         }
         
-        [__self appendDataWithResult:result tableViewData:tableViewData isShowDate:__self.manager.hasHeaderView];
-    };
-    
-    self.tableView.headerForSection = ^(SBTableView *tableView, NSInteger section) {
-        if (__self.dateArray.count > 0 && __self.manager.hasHeaderView == YES) {
-            return [__self headerView:__self.dateArray[section]];
-        }
-        return [[UIView alloc] initWithFrame:CGRectZero];
-    };
-    
-    self.tableView.didSelectRow = ^(SBTableView *tableView, NSIndexPath *indexPath) {
-        SBURLAction *action = [SBURLAction actionWithClassName:@"SNContentController"];
-        [action setObject:[tableView dataOfIndexPath:indexPath] forKey:@"detail"];
-        [__self sb_openCtrl:action];
-    };
-    
-    // 添加表格数据
-    SBTableData *sectionData = [[SBTableData alloc] init];
-    sectionData.mDataCellClass = self.manager.dataClass;
-    sectionData.hasHeaderView = self.manager.hasHeaderView;
-    if ([self.manager.cellStyle isEqualToString:@"digestStyle"]) {
-        [sectionData.tableDataResult.resultInfo setString:@"digestStyle" forKey:@"cell-style"];
-    }
-    [self.tableView addSectionWithData:sectionData];
-    [sectionData refreshData];
-}
-
-- (void)appendDataWithResult:(DataItemResult *)result tableViewData:(SBTableData *)tableViewData isShowDate:(BOOL)isShowDate {
-    if (isShowDate) {
         tableViewData.tableDataResult.maxCount = result.maxCount;
         tableViewData.tableDataResult.statusCode = result.statusCode;
         tableViewData.tableDataResult.message = result.message;
         tableViewData.tableDataResult.itemUniqueKeyName = result.itemUniqueKeyName;
-
+        
         NSDictionary *itemInfo = result.resultInfo.dictData;
         for(NSString *key in [itemInfo allKeys]){
             NSString *value = (NSString *)itemInfo[key];
@@ -118,16 +82,16 @@
         for (DataItemDetail *detail in result.dataList) {
             NSString *date = [detail getString:SN_OTHER_LIST_TIME];
             date = [SBTimeManager sb_formatStr:date preFormat:@"yyyy-MM-dd HH:mm:ss" newFormat:@"yyyy年MM月dd日"];
-            if (![self.dateArray containsObject:date]) {
-                [self.dateArray addObject:date];
-                if (self.dateArray.count > 1) {
+            if (![__self.dateArray containsObject:date]) {
+                [__self.dateArray addObject:date];
+                if (__self.dateArray.count > 1) {
                     // 创建新的section
                     SBTableData *sectionData = [[SBTableData alloc] init];
                     sectionData.hasHeaderView = YES;
-                    sectionData.mDataCellClass = self.manager.dataClass;
+                    sectionData.mDataCellClass = [SNLiveCell class];
                     sectionData.hasFinishCell = YES;
                     sectionData.httpStatus = SBTableDataStatusFinished;
-                    [self.tableView addSectionWithData:sectionData];
+                    [__self.tableView addSectionWithData:sectionData];
                     [sectionData.tableDataResult addItem:detail];
                     lastTableData = sectionData;
                     
@@ -143,9 +107,30 @@
         if (lastTableData != tableViewData) {
             [lastTableData loadData];
         }
-    } else {
-        [tableViewData.tableDataResult appendItems:result];
+    };
+    
+    self.tableView.headerForSection = ^(SBTableView *tableView, NSInteger section) {
+        if (__self.dateArray.count > 0) {
+            return [__self headerView:__self.dateArray[section]];
+        }
+        return [[UIView alloc] initWithFrame:CGRectZero];
+    };
+    
+    self.tableView.didSelectRow = ^(SBTableView *tableView, NSIndexPath *indexPath) {
+        SBURLAction *action = [SBURLAction actionWithClassName:@"SNContentController"];
+        [action setObject:[tableView dataOfIndexPath:indexPath] forKey:@"detail"];
+        [__self sb_openCtrl:action];
+    };
+    
+    // 添加表格数据
+    SBTableData *sectionData = [[SBTableData alloc] init];
+    sectionData.mDataCellClass = [SNLiveCell class];
+    sectionData.hasHeaderView = YES;
+    if ([self.cellStyle isEqualToString:@"digestStyle"]) {
+        [sectionData.tableDataResult.resultInfo setString:@"digestStyle" forKey:@"cell-style"];
     }
+    [self.tableView addSectionWithData:sectionData];
+    [sectionData refreshData];
 }
 
 - (UIView *)headerView:(NSString *)title {

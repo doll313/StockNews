@@ -8,7 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		CB7653441CC8FD20001B14B5 /* SBModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB7653431CC8FD20001B14B5 /* SBModule.framework */; };
-		CB76535A1CD092F7001B14B5 /* SNNewsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CB7653591CD092F7001B14B5 /* SNNewsManager.m */; };
+		CB76535D1CD0C02F001B14B5 /* SNYWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB76535C1CD0C02F001B14B5 /* SNYWViewController.m */; };
+		CB7653601CD0C250001B14B5 /* SBArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB76535F1CD0C250001B14B5 /* SBArticleViewController.m */; };
+		CB7653631CD0C3B4001B14B5 /* SNLiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB7653621CD0C3B4001B14B5 /* SNLiveViewController.m */; };
+		CB7653661CD0D1F6001B14B5 /* SNStockStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB7653651CD0D1F6001B14B5 /* SNStockStatusViewController.m */; };
 		CBC596EA1CBF76230060206C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC596E91CBF76230060206C /* main.m */; };
 		CBC596ED1CBF76230060206C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC596EC1CBF76230060206C /* AppDelegate.m */; };
 		CBC596F31CBF76230060206C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBC596F11CBF76230060206C /* Main.storyboard */; };
@@ -38,7 +41,6 @@
 		CBC597541CBF7D900060206C /* StockBarCommonConfig.json in Resources */ = {isa = PBXBuildFile; fileRef = CBC5972C1CBF7D900060206C /* StockBarCommonConfig.json */; };
 		CBC597551CBF7D900060206C /* zepto.min.js in Resources */ = {isa = PBXBuildFile; fileRef = CBC5972D1CBF7D900060206C /* zepto.min.js */; };
 		CBC597561CBF7D900060206C /* SNImagePreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC5972F1CBF7D900060206C /* SNImagePreviewView.m */; };
-		CBC597571CBF7D900060206C /* SNNewsChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC597311CBF7D900060206C /* SNNewsChildViewController.m */; };
 		CBC597581CBF7D900060206C /* SNNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC597331CBF7D900060206C /* SNNewsViewController.m */; };
 		CBC597591CBF7D900060206C /* SNSyncImageOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC597351CBF7D900060206C /* SNSyncImageOperation.m */; };
 		CBC5975A1CBF7D900060206C /* SBArticleListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC597381CBF7D900060206C /* SBArticleListCell.m */; };
@@ -51,8 +53,14 @@
 
 /* Begin PBXFileReference section */
 		CB7653431CC8FD20001B14B5 /* SBModule.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SBModule.framework; sourceTree = "<group>"; };
-		CB7653581CD092F7001B14B5 /* SNNewsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNNewsManager.h; sourceTree = "<group>"; };
-		CB7653591CD092F7001B14B5 /* SNNewsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNNewsManager.m; sourceTree = "<group>"; };
+		CB76535B1CD0C02F001B14B5 /* SNYWViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNYWViewController.h; sourceTree = "<group>"; };
+		CB76535C1CD0C02F001B14B5 /* SNYWViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNYWViewController.m; sourceTree = "<group>"; };
+		CB76535E1CD0C250001B14B5 /* SBArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBArticleViewController.h; sourceTree = "<group>"; };
+		CB76535F1CD0C250001B14B5 /* SBArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBArticleViewController.m; sourceTree = "<group>"; };
+		CB7653611CD0C3B4001B14B5 /* SNLiveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNLiveViewController.h; sourceTree = "<group>"; };
+		CB7653621CD0C3B4001B14B5 /* SNLiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNLiveViewController.m; sourceTree = "<group>"; };
+		CB7653641CD0D1F6001B14B5 /* SNStockStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNStockStatusViewController.h; sourceTree = "<group>"; };
+		CB7653651CD0D1F6001B14B5 /* SNStockStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNStockStatusViewController.m; sourceTree = "<group>"; };
 		CBC596E51CBF76230060206C /* StockNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StockNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBC596E91CBF76230060206C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CBC596EB1CBF76230060206C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -97,8 +105,6 @@
 		CBC5972D1CBF7D900060206C /* zepto.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = zepto.min.js; sourceTree = "<group>"; };
 		CBC5972E1CBF7D900060206C /* SNImagePreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNImagePreviewView.h; sourceTree = "<group>"; };
 		CBC5972F1CBF7D900060206C /* SNImagePreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNImagePreviewView.m; sourceTree = "<group>"; };
-		CBC597301CBF7D900060206C /* SNNewsChildViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNNewsChildViewController.h; sourceTree = "<group>"; };
-		CBC597311CBF7D900060206C /* SNNewsChildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNNewsChildViewController.m; sourceTree = "<group>"; };
 		CBC597321CBF7D900060206C /* SNNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNNewsViewController.h; sourceTree = "<group>"; };
 		CBC597331CBF7D900060206C /* SNNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNNewsViewController.m; sourceTree = "<group>"; };
 		CBC597341CBF7D900060206C /* SNSyncImageOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNSyncImageOperation.h; sourceTree = "<group>"; };
@@ -233,10 +239,14 @@
 				CBC597271CBF7D900060206C /* SNFile */,
 				CBC5972E1CBF7D900060206C /* SNImagePreviewView.h */,
 				CBC5972F1CBF7D900060206C /* SNImagePreviewView.m */,
-				CB7653581CD092F7001B14B5 /* SNNewsManager.h */,
-				CB7653591CD092F7001B14B5 /* SNNewsManager.m */,
-				CBC597301CBF7D900060206C /* SNNewsChildViewController.h */,
-				CBC597311CBF7D900060206C /* SNNewsChildViewController.m */,
+				CB76535B1CD0C02F001B14B5 /* SNYWViewController.h */,
+				CB76535C1CD0C02F001B14B5 /* SNYWViewController.m */,
+				CB76535E1CD0C250001B14B5 /* SBArticleViewController.h */,
+				CB76535F1CD0C250001B14B5 /* SBArticleViewController.m */,
+				CB7653611CD0C3B4001B14B5 /* SNLiveViewController.h */,
+				CB7653621CD0C3B4001B14B5 /* SNLiveViewController.m */,
+				CB7653641CD0D1F6001B14B5 /* SNStockStatusViewController.h */,
+				CB7653651CD0D1F6001B14B5 /* SNStockStatusViewController.m */,
 				CBC597321CBF7D900060206C /* SNNewsViewController.h */,
 				CBC597331CBF7D900060206C /* SNNewsViewController.m */,
 				CBC597341CBF7D900060206C /* SNSyncImageOperation.h */,
@@ -359,7 +369,6 @@
 				CBC5975B1CBF7D900060206C /* SBUserReplyToolView.m in Sources */,
 				CBC5975E1CBF7D900060206C /* SNTagsView.m in Sources */,
 				CBC597581CBF7D900060206C /* SNNewsViewController.m in Sources */,
-				CB76535A1CD092F7001B14B5 /* SNNewsManager.m in Sources */,
 				CBC597461CBF7D900060206C /* SBCommentController.m in Sources */,
 				CBC597591CBF7D900060206C /* SNSyncImageOperation.m in Sources */,
 				CBC5975F1CBF7D900060206C /* SNYWCell.m in Sources */,
@@ -368,17 +377,20 @@
 				CBC5974B1CBF7D900060206C /* SBReplyView.m in Sources */,
 				CBC5974D1CBF7D900060206C /* SNAsyncImageOperation.m in Sources */,
 				CBC5974F1CBF7D900060206C /* SNContentController.m in Sources */,
-				CBC597571CBF7D900060206C /* SNNewsChildViewController.m in Sources */,
+				CB7653661CD0D1F6001B14B5 /* SNStockStatusViewController.m in Sources */,
 				CBC5975D1CBF7D900060206C /* SNStockStatusCell.m in Sources */,
 				CBC597471CBF7D900060206C /* SBCommentView+Private.m in Sources */,
 				CBC5974E1CBF7D900060206C /* SNBodyParser.m in Sources */,
 				CBC597481CBF7D900060206C /* SBCommentView.m in Sources */,
 				CBC597451CBF7D900060206C /* SBCommentCell.m in Sources */,
+				CB76535D1CD0C02F001B14B5 /* SNYWViewController.m in Sources */,
 				CBC5974A1CBF7D900060206C /* SBNewsController.m in Sources */,
 				CBC5974C1CBF7D900060206C /* SBStarView.m in Sources */,
 				CBC5975C1CBF7D900060206C /* SNLiveCell.m in Sources */,
 				CBC5975A1CBF7D900060206C /* SBArticleListCell.m in Sources */,
 				CBC596EA1CBF76230060206C /* main.m in Sources */,
+				CB7653631CD0C3B4001B14B5 /* SNLiveViewController.m in Sources */,
+				CB7653601CD0C250001B14B5 /* SBArticleViewController.m in Sources */,
 				CBC597561CBF7D900060206C /* SNImagePreviewView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
