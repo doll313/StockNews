@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface SNNewsChildViewController : UIViewController
-@property (nonatomic, assign)NSInteger channelNum;   // 通过频道号区分
+@property (nonatomic, copy)NSString *titleName;
 @end

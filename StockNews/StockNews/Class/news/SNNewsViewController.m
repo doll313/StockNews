@@ -71,7 +71,7 @@
 - (void)addControllers {
     for (int i = 0; i < self.channelList.count; i++) {
         SNNewsChildViewController *ctrl = [[SNNewsChildViewController alloc] init];
-        ctrl.channelNum = i;
+        ctrl.titleName = self.channelList[i];
         [self addChildViewController:ctrl];
     }
 }
@@ -81,7 +81,7 @@
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
     NSUInteger index = scrollView.contentOffset.x / self.pageScrollView.width;
     SNNewsChildViewController *ctrl = self.childViewControllers[index];
-    ctrl.channelNum = index;
+    ctrl.titleName = self.channelList[index];
     [self.tagsView titleAction:index];
 
     if (ctrl.view.superview) return;
