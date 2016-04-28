@@ -10,26 +10,28 @@
 #import <SBBusiness/SBV3Process.h>
 #import "SBCommentCell.h"
 #import "SBCommentView+Private.h"
+#import <SBModule/STORE.h>
+#import <SBBusiness/SNJSONNODE.h>
 
 @interface SBCommentView()
 @property (nonatomic, strong)UIButton *lookCommentBtn;
 @property (nonatomic, assign)SBV3ReplysSort sortType;
-@property (nonatomic, copy)  NSString *foward_count;   // 转发数，前面传过来的
 @property (nonatomic, strong)UIView *topView;
 @property (nonatomic, strong)UIImageView *bottomLine;
 @property (nonatomic, strong)UILabel *commentCountLbl;
 @property (nonatomic, assign)BOOL isHotList;          // 是否热门
+@property (nonatomic, strong)DataItemDetail *detail;
 @end
 
 @implementation SBCommentView
 
-- (instancetype)initWithPostId:(NSString *)postid type:(NSInteger)type foward_count:(NSString *)foward_count {
+- (instancetype)initWithDataItemDetail:(DataItemDetail *)detail {
     self = [super init];
     if (self) {
         _model = [[SBEmojiModel alloc] init];
         _sortType = SBV3ReplysSortASC;
-        _foward_count = foward_count;
         _isHotList = NO;
+        self.detail = detail;
         
         _tableView = [[SBTableView alloc] initWithStyle:NO];
         _tableView.ctrl = self.ctrl;
@@ -39,51 +41,34 @@
         [self initTopView];
         
         SBWS(__self);
-        
         // request相关
         _tableView.requestData = ^(SBTableData *tableViewData) {
-            return [SBV3Process sbget_mainpost_replys:postid type:type p:tableViewData.pageAt sort:__self.sortType delegate:tableViewData];
+            return [SBV3Process sbget_mainpost_replys:[detail getString:__SN_BIGNEWS_LIST_NEWSID] type:[[detail getString:@"ty"] intValue] p:tableViewData.pageAt sort:__self.sortType delegate:tableViewData];
         };
         
         _tableView.receiveData = ^(SBTableView *tableView, SBTableData *tableViewData, DataItemResult *result) {
+            
+            NSString *key = [NSString stringWithFormat:@"%@%@", NSStringFromClass(__self.class), [detail getString:__SN_BIGNEWS_LIST_NEWSID]];
             if (result.hasError) {
+                if (tableViewData.pageAt == 1 && tableViewData.tableDataResult.dataList.count == 0 && SBV3ReplysSortASC == __self.sortType) {
+                    DataItemResult *cacheResult = [[SBAppCoreInfo getCacheDB] getResultValue:STORE_CACHE_TABLEDATA dataKey:key];
+                    [__self appendData:tableViewData result:cacheResult];
+                }
                 return;
             }
             
-            NSArray *hotList = [(DataItemDetail *)result.resultInfo getArray:@"point_re"];
-            if (hotList.count > 0 && tableViewData.pageAt == 1) {
-                // 显示热门评论
-                __self.isHotList = YES;
-                
-                DataItemResult *hotResult = [[DataItemResult alloc] init];
-                hotResult.dataList = [hotList mutableCopy];
-                [__self calculateHeight:hotResult];
-                [tableViewData.tableDataResult appendItems:hotResult];
-                
-                SBTableData *sectionData = [[SBTableData alloc] init];
-                sectionData.hasHeaderView = YES;
-                sectionData.mDataCellClass = [SBCommentCell class];
-                sectionData.hasFinishCell = YES;
-                sectionData.httpStatus = SBTableDataStatusFinished;
-                
-                [__self calculateHeight:result];
-                [sectionData.tableDataResult appendItems:result];
-                [tableView addSectionWithData:sectionData];
-                
-                __self.commentCountLbl.text = [NSString stringWithFormat:@"评论 %@ 转发 %@", @(result.maxCount), __self.foward_count];
-            } else {
-            
-                [__self calculateHeight:result];
-                [tableViewData.tableDataResult appendItems:result];
+            if (tableViewData.pageAt == 1 && SBV3ReplysSortASC == __self.sortType) {
+                // 缓存
+                [[SBAppCoreInfo getCacheDB] setResultValue:STORE_CACHE_TABLEDATA dataKey:key data:result];
             }
-            __self.commentCountLbl.text = [NSString stringWithFormat:@"评论 %@ 转发 %@", @(result.maxCount), __self.foward_count];
+            [__self appendData:tableViewData result:result];
         };
         
         _tableView.headerForSection = ^UIView *(SBTableView *tableView, NSInteger section) {
-            if ([tableView dataOfSection:0].httpStatus != SBTableDataStatusFinished) {
+            if ([tableView dataOfSection:0].httpStatus != SBTableDataStatusFinished || [tableView dataOfSection:0].tableDataResult.dataList.count == 0) {
                 return nil;
             }
-            return [__self initWithHeaderView:(section == 0 && __self.isHotList == YES) ? @"热门评论" : @"全部评论"];
+            return [__self initialHeaderView:(section == 0 && __self.isHotList == YES) ? @"热门评论" : @"全部评论"];
         };
         
         _tableView.didSelectRow = ^(SBTableView *tableView, NSIndexPath *indexPath) {
@@ -101,9 +86,37 @@
     return self;
 }
 
-- (UIView *)initWithHeaderView:(NSString *)title {
-    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.width, 44)];
-    headerView.backgroundColor = [UIColor whiteColor];
+- (void)appendData:(SBTableData *)tableViewData result:(DataItemResult *)result {
+    NSArray *hotList = [(DataItemDetail *)result.resultInfo getArray:@"point_re"];
+    if (hotList.count > 0 && tableViewData.pageAt == 1) {
+        // 显示热门评论
+        self.isHotList = YES;
+        
+        DataItemResult *hotResult = [[DataItemResult alloc] init];
+        hotResult.dataList = [hotList mutableCopy];
+        [self calculateHeight:hotResult];
+        [tableViewData.tableDataResult appendItems:hotResult];
+        
+        SBTableData *sectionData = [[SBTableData alloc] init];
+        sectionData.hasHeaderView = YES;
+        sectionData.mDataCellClass = [SBCommentCell class];
+        sectionData.hasFinishCell = YES;
+        sectionData.httpStatus = SBTableDataStatusFinished;
+        
+        [self calculateHeight:result];
+        [sectionData.tableDataResult appendItems:result];
+        [self.tableView addSectionWithData:sectionData];
+    } else {
+        [self calculateHeight:result];
+        [tableViewData.tableDataResult appendItems:result];
+    }
+    self.commentCountLbl.text = [NSString stringWithFormat:@"评论 %@ 转发 %@", @(result.maxCount), [self.detail getString:@"foward_count"]];
+
+}
+
+- (UIView *)initialHeaderView:(NSString *)title {
+    UIView *hView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.width, 44)];
+    hView.backgroundColor = [UIColor whiteColor];
     
     UIButton *showButton = [UIButton buttonWithType:UIButtonTypeCustom];
     showButton.frame = CGRectMake(10, 10, 54, 24);
@@ -111,9 +124,9 @@
     [showButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [showButton setBackgroundColor:RGB(49,111,201)];
     [showButton setTitle:title forState:UIControlStateNormal];
-    [headerView addSubview:showButton];
+    [hView addSubview:showButton];
     
-    return headerView;
+    return hView;
 }
 
 - (void)layoutSubviews {

@@ -15,7 +15,7 @@
 @property (nonatomic, strong)SBTableView *tableView;
 @property (nonatomic, strong)SBEmojiModel *model;
 
-- (instancetype)initWithPostId:(NSString *)postid type:(NSInteger)type foward_count:(NSString *)foward_count;
+- (instancetype)initWithDataItemDetail:(DataItemDetail *)detail;
 
 /** 刷新评论列表 */
 - (void)refreshComments;
