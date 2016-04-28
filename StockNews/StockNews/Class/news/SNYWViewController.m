@@ -46,10 +46,20 @@
     };
     
     self.tableView.receiveData= ^(SBTableView *tableView ,SBTableData *tableViewData, DataItemResult *result) {
+        // 根据类名+频道名称组合成key
+        NSString *key = [NSString stringWithFormat:@"%@%@", NSStringFromClass(__self.class), __self.channelName];
         if (result.hasError) {
+            if (tableViewData.pageAt == 1 && tableViewData.tableDataResult.dataList.count == 0) {
+                DataItemResult *cacheResult = [[SBAppCoreInfo getCacheDB] getResultValue:STORE_CACHE_TABLEDATA dataKey:key];
+                [tableViewData.tableDataResult appendItems:cacheResult];
+            }
             return;
         }
         
+        if (tableViewData.pageAt == 1) {
+            // 对数据第一页做缓存
+            [[SBAppCoreInfo getCacheDB] setResultValue:STORE_CACHE_TABLEDATA dataKey:key data:result];
+        }
         [tableViewData.tableDataResult appendItems:result];
     };
     
