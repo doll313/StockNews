@@ -47,10 +47,18 @@
     };
     
     self.tableView.receiveData= ^(SBTableView *tableView ,SBTableData *tableViewData, DataItemResult *result) {
+        NSString *key = [NSString stringWithFormat:@"%@", NSStringFromClass(__self.class)];
         if (result.hasError) {
+            if (tableViewData.pageAt == 1 && tableViewData.tableDataResult.dataList.count == 0) {
+                DataItemResult *cacheResult = [[SBAppCoreInfo getCacheDB] getResultValue:STORE_CACHE_TABLEDATA dataKey:key];
+                [tableViewData.tableDataResult appendItems:cacheResult];
+            }
             return;
         }
-        
+        if (tableViewData.pageAt == 1) {
+            // 缓存
+            [[SBAppCoreInfo getCacheDB] setResultValue:STORE_CACHE_TABLEDATA dataKey:key data:result];
+        }
         [tableViewData.tableDataResult appendItems:result];
     };
     
