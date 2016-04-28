@@ -17,6 +17,4 @@
 + (void)generateRelatedNewsLink:(DataItemResult *)result;
 //获取图片信息
 + (NSArray *)generateBodyImages:(DataItemResult *)result;
-//获取超链信息
-+ (NSArray *)generateBodyLinks:(DataItemResult *)result;
 @end

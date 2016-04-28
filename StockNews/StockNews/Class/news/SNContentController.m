@@ -22,6 +22,7 @@
 @property (nonatomic, strong)DataItemResult *result;
 @property (nonatomic, strong)NSOperationQueue *queue;
 @property (nonatomic, strong)UIImageView *toolImgView;
+@property (nonatomic, strong)UIButton *commentBtn;
 @end
 
 @implementation SNContentController
@@ -52,17 +53,16 @@
     _toolImgView.userInteractionEnabled = YES;
     [self.view addSubview:_toolImgView];
     
-    UIButton *commentBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [commentBtn setTitle:@"评论" forState:UIControlStateNormal];
-    commentBtn.titleLabel.font = [UIFont systemFontOfSize:14];
-    commentBtn.layer.masksToBounds = YES;
-    commentBtn.layer.cornerRadius = 5;
-    commentBtn.layer.borderColor = RGB(49,111,201).CGColor;
-    commentBtn.layer.borderWidth = 1;
-    [commentBtn setTitleColor:RGB(49,111,201) forState:UIControlStateNormal];
-    [commentBtn addTarget:self action:@selector(enterCommentList:) forControlEvents:UIControlEventTouchUpInside];
-    [_toolImgView addSubview:commentBtn];
-    commentBtn.frame = CGRectMake(self.view.width - 60, 5, _toolImgView.height,  _toolImgView.height - 10);
+    _commentBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    _commentBtn.titleLabel.font = [UIFont systemFontOfSize:14];
+    _commentBtn.layer.masksToBounds = YES;
+    _commentBtn.layer.cornerRadius = 5;
+    _commentBtn.layer.borderColor = RGB(49,111,201).CGColor;
+    _commentBtn.layer.borderWidth = 1;
+    [_commentBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [_commentBtn addTarget:self action:@selector(enterCommentList:) forControlEvents:UIControlEventTouchUpInside];
+    _commentBtn.frame = CGRectMake(0, 5, 0, _toolImgView.height - 10);
+    [_toolImgView addSubview:_commentBtn];
 }
 
 - (void)viewDidLayoutSubviews {
@@ -70,7 +70,6 @@
     
     self.contentWebview.frame = self.view.bounds;
     self.contentWebview.height -= self.toolImgView.height;
-    
     self.toolImgView.bottom = self.view.bottom;
 }
 
@@ -103,6 +102,10 @@
             NSString *path = [[NSBundle mainBundle]pathForResource:@"SNBodyTemplate" ofType:@"html"];
             NSURL *fileURL = [NSURL fileURLWithPath:path];
             [__self.contentWebview loadHTMLString:resultStr baseURL:fileURL];
+            
+            [__self.commentBtn setTitle:[NSString stringWithFormat:@"%@ 评论", [__self.result.resultInfo getString:@"count"]] forState:UIControlStateNormal];
+            [__self.commentBtn sizeToFit];
+            __self.commentBtn.left = __self.view.width - __self.commentBtn.width - 10;
         }];
     }
 }

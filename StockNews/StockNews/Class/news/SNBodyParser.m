@@ -523,7 +523,7 @@
     //link占位符配置
     NSArray *links = [contentDetail getArray:JSON_NODE_LINKS];
     
-    //屏蔽Info.
+    //屏蔽Info
     NSString *pattern = @"<span id=\"(Info..*?)\"><!--Link#(\\d*)--></span>";
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:nil];
     int i = 0;
@@ -586,7 +586,7 @@
     //link占位符配置
     NSArray *links = [contentDetail getArray:JSON_NODE_LINKS];
     
-    //屏蔽Info.
+    //屏蔽Info
     NSString *pattern = @"<!--Link#(\\d*)-->";
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:nil];
     int i = 0;
