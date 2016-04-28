@@ -15,12 +15,14 @@
 
 @interface SNYWViewController ()
 @property (nonatomic, strong)SBTableView *tableView;
+@property (nonatomic, copy)NSString *channelName;// 频道名
 @end
 
 @implementation SNYWViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.channelName = [self.urlAction stringForKey:@"channelName"];
     [self tableDidLoad];
 }
 

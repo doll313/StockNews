@@ -12,15 +12,18 @@
 #import <SBBusiness/SNJSONNODE.h>
 #import <SBModule/STORE.h>
 #import "SNStockStatusCell.h"
+#import <SBModule/SBURLAction.h>
 
 @interface SNStockStatusViewController ()
 @property (nonatomic, strong)SBTableView *tableView;
+@property (nonatomic, copy)NSString *channelName;// 频道名称
 @end
 
 @implementation SNStockStatusViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.channelName = [self.urlAction stringForKey:@"channelName"];
     [self tableDidLoad];
 }
 

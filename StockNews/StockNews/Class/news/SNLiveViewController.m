@@ -14,10 +14,14 @@
 #import <SBBusiness/SBTimeManager.h>
 #import <SBModule/STORE.h>
 #import "SNLiveCell.h"
+#import <SBModule/SBURLAction.h>
 
 @interface SNLiveViewController ()
 @property (nonatomic, strong)SBTableView *tableView;
 @property (nonatomic, strong)NSMutableArray *dateArray;
+@property (nonatomic, copy)NSString *cellStyle;   // 单元格cell类型
+@property (nonatomic, copy)NSString *column;      // 编号
+@property (nonatomic, copy)NSString *channelName;// 频道名称
 @end
 
 @implementation SNLiveViewController
@@ -25,6 +29,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.cellStyle = [self.urlAction stringForKey:@"cellStyle"];
+    self.column = [self.urlAction stringForKey:@"column"];
+    self.channelName = [self.urlAction stringForKey:@"channelName"];
     _dateArray = [[NSMutableArray alloc] init];
     [self tableDidLoad];
 }

@@ -9,5 +9,4 @@
 #import <UIKit/UIKit.h>
 
 @interface SNYWViewController : UIViewController
-@property (nonatomic, copy)NSString *channelName;// 频道名称
 @end

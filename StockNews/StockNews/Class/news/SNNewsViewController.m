@@ -8,10 +8,7 @@
 
 #import "SNNewsViewController.h"
 #import "SNTagsView.h"
-#import "SNYWViewController.h"
-#import "SBArticleViewController.h"
-#import "SNLiveViewController.h"
-#import "SNStockStatusViewController.h"
+#import <SBModule/SBURLAction.h>
 
 @interface SNNewsViewController ()<UIScrollViewDelegate>
 @property (nonatomic, strong)NSArray *channelList;    // 频道号列表
@@ -72,68 +69,40 @@
 }
 
 - (void)addControllers {
+    NSString *actionUrl = @"";
     for (int i = 0; i < self.channelList.count; i++) {
         NSString *titleName = self.channelList[i];
         if ([titleName isEqualToString:@"要闻"]) {
-            SNYWViewController *ctrl = [[SNYWViewController alloc] init];
-            ctrl.channelName = @"ywjh";
-            [self addChildViewController:ctrl];
+            actionUrl = @"stockbar://SNYWViewController?channelName=ywjh";
         } else if([titleName isEqualToString:@"直播"]) {
-            SNLiveViewController *ctrl = [[SNLiveViewController alloc] init];
-            ctrl.channelName = @"zhibo";
-            [self addChildViewController:ctrl];
+            actionUrl = @"stockbar://SNLiveViewController?channelName=zhibo";
         } else if([titleName isEqualToString:@"个股"]) {
-            SNStockStatusViewController *ctrl = [[SNStockStatusViewController alloc] init];
-            ctrl.channelName = @"ggdj";
-            [self addChildViewController:ctrl];
+            actionUrl = @"stockbar://SNStockStatusViewController?channelName=ggdj";
         } else if([titleName isEqualToString:@"看盘"]) {
-            SBArticleViewController *ctrl = [[SBArticleViewController alloc] init];
-            [self addChildViewController:ctrl];
+            actionUrl = @"stockbar://SBArticleViewController";
         } else if([titleName isEqualToString:@"滚动"]) {
-            SNLiveViewController *ctrl = [[SNLiveViewController alloc] init];
-            ctrl.column = @"102";
-            ctrl.cellStyle = @"digestStyle";
-            [self addChildViewController:ctrl];
+            actionUrl = @"stockbar://SNLiveViewController?cellStyle=digestStyle&column=102";
         } else if([titleName isEqualToString:@"公司"]) {
-            SNLiveViewController *ctrl = [[SNLiveViewController alloc] init];
-            ctrl.column = @"103";
-            ctrl.cellStyle = @"digestStyle";
-            [self addChildViewController:ctrl];
+            actionUrl = @"stockbar://SNLiveViewController?cellStyle=digestStyle&column=103";
         } else if([titleName isEqualToString:@"基金"]) {
-            SNLiveViewController *ctrl = [[SNLiveViewController alloc] init];
-            ctrl.column = @"109";
-            ctrl.cellStyle = @"digestStyle";
-            [self addChildViewController:ctrl];
+            actionUrl = @"stockbar://SNLiveViewController?cellStyle=digestStyle&column=109";
         } else if([titleName isEqualToString:@"股市播报"]) {
-            SNStockStatusViewController *ctrl = [[SNStockStatusViewController alloc] init];
-            ctrl.channelName = @"gszb";
-            [self addChildViewController:ctrl];
+            actionUrl = @"stockbar://SNStockStatusViewController?channelName=gszb";
         } else if([titleName isEqualToString:@"大盘"]) {
-            SNStockStatusViewController *ctrl = [[SNStockStatusViewController alloc] init];
-            ctrl.channelName = @"dpfx";
-            [self addChildViewController:ctrl];
+            actionUrl = @"stockbar://SNStockStatusViewController?channelName=dpfx";
         } else if([titleName isEqualToString:@"交易提示"]) {
-            SNStockStatusViewController *ctrl = [[SNStockStatusViewController alloc] init];
-            ctrl.channelName = @"jyts";
-            [self addChildViewController:ctrl];
+            actionUrl = @"stockbar://SNStockStatusViewController?channelName=jyts";
         } else if([titleName isEqualToString:@"产经新闻"]) {
-            SNStockStatusViewController *ctrl = [[SNStockStatusViewController alloc] init];
-            ctrl.channelName = @"cjxw";
-            [self addChildViewController:ctrl];
+            actionUrl = @"stockbar://SNStockStatusViewController?channelName=cjxw";
         } else if([titleName isEqualToString:@"报刊头条"]) {
-            SNStockStatusViewController *ctrl = [[SNStockStatusViewController alloc] init];
-            ctrl.channelName = @"bktt";
-            [self addChildViewController:ctrl];
+            actionUrl = @"stockbar://SNStockStatusViewController?channelName=bktt";
         } else if([titleName isEqualToString:@"美股要闻"]) {
-            SNStockStatusViewController *ctrl = [[SNStockStatusViewController alloc] init];
-            ctrl.channelName = @"mgyw";
-            [self addChildViewController:ctrl];
+            actionUrl = @"stockbar://SNStockStatusViewController?channelName=mgyw";
         } else if([titleName isEqualToString:@"全球股市"]) {
-            SNLiveViewController *ctrl = [[SNLiveViewController alloc] init];
-            ctrl.column = @"105";
-            ctrl.cellStyle = @"digestStyle";
-            [self addChildViewController:ctrl];
+            actionUrl = @"stockbar://SNLiveViewController?cellStyle=digestStyle&column=105";
         }
+        SBURLAction *action = [SBURLAction actionWithURLString:actionUrl];
+        [self addChildViewController:[SBURLAction sb_initCtrl:action]];
     }
 }
 
