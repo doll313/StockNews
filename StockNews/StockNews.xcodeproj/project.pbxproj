@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB5E1FA91CD890140030AAB9 /* SNTopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB5E1FA81CD890140030AAB9 /* SNTopicViewController.m */; };
+		CB5E1FAF1CD894760030AAB9 /* SNTopicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB5E1FAE1CD894760030AAB9 /* SNTopicCell.m */; };
 		CB7653441CC8FD20001B14B5 /* SBModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB7653431CC8FD20001B14B5 /* SBModule.framework */; };
 		CB76535D1CD0C02F001B14B5 /* SNYWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB76535C1CD0C02F001B14B5 /* SNYWViewController.m */; };
 		CB7653601CD0C250001B14B5 /* SBArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB76535F1CD0C250001B14B5 /* SBArticleViewController.m */; };
@@ -52,6 +54,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CB5E1FA71CD890140030AAB9 /* SNTopicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNTopicViewController.h; sourceTree = "<group>"; };
+		CB5E1FA81CD890140030AAB9 /* SNTopicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNTopicViewController.m; sourceTree = "<group>"; };
+		CB5E1FAD1CD894760030AAB9 /* SNTopicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNTopicCell.h; sourceTree = "<group>"; };
+		CB5E1FAE1CD894760030AAB9 /* SNTopicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNTopicCell.m; sourceTree = "<group>"; };
 		CB7653431CC8FD20001B14B5 /* SBModule.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SBModule.framework; sourceTree = "<group>"; };
 		CB76535B1CD0C02F001B14B5 /* SNYWViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNYWViewController.h; sourceTree = "<group>"; };
 		CB76535C1CD0C02F001B14B5 /* SNYWViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNYWViewController.m; sourceTree = "<group>"; };
@@ -230,13 +236,15 @@
 		CBC597201CBF7D900060206C /* news */ = {
 			isa = PBXGroup;
 			children = (
-				CBC597211CBF7D900060206C /* SNAsyncImageOperation.h */,
-				CBC597221CBF7D900060206C /* SNAsyncImageOperation.m */,
+				CBC597271CBF7D900060206C /* SNFile */,
 				CBC597231CBF7D900060206C /* SNBodyParser.h */,
 				CBC597241CBF7D900060206C /* SNBodyParser.m */,
 				CBC597251CBF7D900060206C /* SNContentController.h */,
 				CBC597261CBF7D900060206C /* SNContentController.m */,
-				CBC597271CBF7D900060206C /* SNFile */,
+				CBC597211CBF7D900060206C /* SNAsyncImageOperation.h */,
+				CBC597221CBF7D900060206C /* SNAsyncImageOperation.m */,
+				CBC597341CBF7D900060206C /* SNSyncImageOperation.h */,
+				CBC597351CBF7D900060206C /* SNSyncImageOperation.m */,
 				CBC5972E1CBF7D900060206C /* SNImagePreviewView.h */,
 				CBC5972F1CBF7D900060206C /* SNImagePreviewView.m */,
 				CB76535B1CD0C02F001B14B5 /* SNYWViewController.h */,
@@ -249,8 +257,8 @@
 				CB7653651CD0D1F6001B14B5 /* SNStockStatusViewController.m */,
 				CBC597321CBF7D900060206C /* SNNewsViewController.h */,
 				CBC597331CBF7D900060206C /* SNNewsViewController.m */,
-				CBC597341CBF7D900060206C /* SNSyncImageOperation.h */,
-				CBC597351CBF7D900060206C /* SNSyncImageOperation.m */,
+				CB5E1FA71CD890140030AAB9 /* SNTopicViewController.h */,
+				CB5E1FA81CD890140030AAB9 /* SNTopicViewController.m */,
 				CBC597361CBF7D900060206C /* SNView */,
 			);
 			path = news;
@@ -284,6 +292,8 @@
 				CBC597401CBF7D900060206C /* SNTagsView.m */,
 				CBC597411CBF7D900060206C /* SNYWCell.h */,
 				CBC597421CBF7D900060206C /* SNYWCell.m */,
+				CB5E1FAD1CD894760030AAB9 /* SNTopicCell.h */,
+				CB5E1FAE1CD894760030AAB9 /* SNTopicCell.m */,
 			);
 			path = SNView;
 			sourceTree = "<group>";
@@ -366,6 +376,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB5E1FAF1CD894760030AAB9 /* SNTopicCell.m in Sources */,
 				CBC5975B1CBF7D900060206C /* SBUserReplyToolView.m in Sources */,
 				CBC5975E1CBF7D900060206C /* SNTagsView.m in Sources */,
 				CBC597581CBF7D900060206C /* SNNewsViewController.m in Sources */,
@@ -387,6 +398,7 @@
 				CBC5974A1CBF7D900060206C /* SBNewsController.m in Sources */,
 				CBC5974C1CBF7D900060206C /* SBStarView.m in Sources */,
 				CBC5975C1CBF7D900060206C /* SNLiveCell.m in Sources */,
+				CB5E1FA91CD890140030AAB9 /* SNTopicViewController.m in Sources */,
 				CBC5975A1CBF7D900060206C /* SBArticleListCell.m in Sources */,
 				CBC596EA1CBF76230060206C /* main.m in Sources */,
 				CB7653631CD0C3B4001B14B5 /* SNLiveViewController.m in Sources */,

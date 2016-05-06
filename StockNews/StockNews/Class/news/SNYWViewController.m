@@ -66,9 +66,18 @@
     };
     
     self.tableView.didSelectRow = ^(SBTableView *tableView, NSIndexPath *indexPath) {
-        SBURLAction *action = [SBURLAction actionWithClassName:@"SNContentController"];
-        [action setObject:[tableView dataOfIndexPath:indexPath] forKey:@"detail"];
-        [__self sb_openCtrl:action];
+        DataItemDetail *detail = [tableView dataOfIndexPath:indexPath];
+        if ([[detail getString:SN_TOPIC_LIST_SIMTPYE] isEqualToString:@"2"] && [detail getString:SN_SUMMARY_LIST_SIMTPYE].length > 0) {
+            // 专题
+            SBURLAction *action = [SBURLAction actionWithClassName:@"SNTopicViewController"];
+            NSArray *special = [detail getArray:SN_SUMMARY_LIST_TOPICARR];
+            [action setObject:special[0][@"name"] forKey:@"topicName"];
+            [__self sb_openCtrl:action];
+        } else {
+            SBURLAction *action = [SBURLAction actionWithClassName:@"SNContentController"];
+            [action setObject:detail forKey:@"detail"];
+            [__self sb_openCtrl:action];
+        }
     };
     
     // 添加表格数据
