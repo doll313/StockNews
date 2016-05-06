@@ -80,7 +80,7 @@
     };
     
     _tableView.headerForSection = ^UIView *(SBTableView *tableView, NSInteger section) {
-        if ([tableView dataOfSection:0].httpStatus != SBTableDataStatusFinished || [tableView dataOfSection:0].tableDataResult.dataList.count == 0) {
+        if ([tableView dataOfSection:0].tableDataResult.dataList.count == 0) {
             return nil;
         }
         return [__self initialSectionHeader:section];
