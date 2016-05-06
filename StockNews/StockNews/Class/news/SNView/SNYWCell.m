@@ -28,8 +28,9 @@
         _titleLbl = [[UILabel alloc] init];
         _titleLbl.textColor = [UIColor blackColor];
         _titleLbl.font = [UIFont systemFontOfSize:15];
-        _titleLbl.numberOfLines = 2;
-        _titleLbl.lineBreakMode = NSLineBreakByWordWrapping;
+        _titleLbl.numberOfLines = 0;
+        _titleLbl.lineBreakMode = NSLineBreakByTruncatingTail;
+        _titleLbl.preferredMaxLayoutWidth = self.width - 2 * APPCONFIG_UI_TABLE_PADDING - 70;
         [self.contentView addSubview:_titleLbl];
         
         _commentNumLbl = [[UILabel alloc] init];
@@ -49,7 +50,6 @@
         
         [self.imgView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.and.top.equalTo(self.contentView).with.offset(APPCONFIG_UI_TABLE_PADDING);
-            make.bottom.equalTo(self.contentView).with.offset(-APPCONFIG_UI_TABLE_PADDING);
             make.size.mas_equalTo(CGSizeMake(60, 50));
         }];
         
@@ -60,7 +60,7 @@
         }];
         
         [self.simLbl mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.titleLbl.mas_bottom);
+            make.top.equalTo(self.titleLbl.mas_bottom).with.offset(2);
             make.left.equalTo(self.titleLbl);
         }];
         
@@ -71,13 +71,6 @@
         }];
     }
     return self;
-}
-
-- (void)layoutSubviews {
-    [super layoutSubviews];
-    
-    // uilable多行，autolayout一定要设置这个属性
-    self.titleLbl.preferredMaxLayoutWidth = self.width - 3 * APPCONFIG_UI_TABLE_PADDING - self.imgView.right;
 }
 
 - (void)dealloc {
