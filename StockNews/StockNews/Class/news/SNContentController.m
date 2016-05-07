@@ -105,6 +105,7 @@
             
             [__self.commentBtn setTitle:[NSString stringWithFormat:@"%@ 评论", [__self.result.resultInfo getString:@"count"]] forState:UIControlStateNormal];
             [__self.commentBtn sizeToFit];
+            __self.commentBtn.width += 8;
             __self.commentBtn.left = __self.view.width - __self.commentBtn.width - 10;
         }];
     }
