@@ -14,6 +14,7 @@
 		CB7653601CD0C250001B14B5 /* SBArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB76535F1CD0C250001B14B5 /* SBArticleViewController.m */; };
 		CB7653631CD0C3B4001B14B5 /* SNLiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB7653621CD0C3B4001B14B5 /* SNLiveViewController.m */; };
 		CB7653661CD0D1F6001B14B5 /* SNStockStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB7653651CD0D1F6001B14B5 /* SNStockStatusViewController.m */; };
+		CB9A7FF61CDDA236005C9288 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB9A7FF51CDDA236005C9288 /* Images.xcassets */; };
 		CBC596EA1CBF76230060206C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC596E91CBF76230060206C /* main.m */; };
 		CBC596ED1CBF76230060206C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC596EC1CBF76230060206C /* AppDelegate.m */; };
 		CBC596F31CBF76230060206C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBC596F11CBF76230060206C /* Main.storyboard */; };
@@ -67,6 +68,7 @@
 		CB7653621CD0C3B4001B14B5 /* SNLiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNLiveViewController.m; sourceTree = "<group>"; };
 		CB7653641CD0D1F6001B14B5 /* SNStockStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNStockStatusViewController.h; sourceTree = "<group>"; };
 		CB7653651CD0D1F6001B14B5 /* SNStockStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNStockStatusViewController.m; sourceTree = "<group>"; };
+		CB9A7FF51CDDA236005C9288 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CBC596E51CBF76230060206C /* StockNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StockNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBC596E91CBF76230060206C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CBC596EB1CBF76230060206C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				CBC596F61CBF76230060206C /* LaunchScreen.storyboard */,
 				CBC596F91CBF76230060206C /* Info.plist */,
 				CBC596FF1CBF77000060206C /* Frameworks */,
+				CB9A7FF51CDDA236005C9288 /* Images.xcassets */,
 				CBC596E81CBF76230060206C /* Supporting Files */,
 			);
 			path = StockNews;
@@ -364,6 +367,7 @@
 				CBC597501CBF7D900060206C /* SNBodyCSS.css in Resources */,
 				CBC597431CBF7D900060206C /* SBEmoji.bundle in Resources */,
 				CBC597511CBF7D900060206C /* SNBodyJS.js in Resources */,
+				CB9A7FF61CDDA236005C9288 /* Images.xcassets in Resources */,
 				CBC597541CBF7D900060206C /* StockBarCommonConfig.json in Resources */,
 				CBC597551CBF7D900060206C /* zepto.min.js in Resources */,
 			);
@@ -515,6 +519,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/StockNews/Frameworks",
@@ -533,6 +538,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/StockNews/Frameworks",
