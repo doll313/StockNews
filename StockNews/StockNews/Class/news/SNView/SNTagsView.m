@@ -8,7 +8,7 @@
 
 #import "SNTagsView.h"
 
-#define SCROLL_HEIGHT   40
+#define SCROLL_HEIGHT   44
 #define PADDING         10
 
 @interface SNTagsView()
@@ -34,8 +34,8 @@
         
         [self.tagsScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self);
-            make.left.equalTo(self);
-            make.right.equalTo(self);
+            make.left.equalTo(@0);
+            make.right.equalTo(@0);
             make.height.equalTo(@SCROLL_HEIGHT);
         }];
         
@@ -46,7 +46,7 @@
         NSMutableArray *arr = [[NSMutableArray alloc] init];
         CGFloat locationX = 0;
         for (int i = 0; i < _channelList.count; i++) {
-            UILabel *titleLbl = [[UILabel alloc] initWithFrame:CGRectMake(0, 12, 0, 16)];
+            UILabel *titleLbl = [[UILabel alloc] initWithFrame:CGRectMake(0, 14, 0, 16)];
             titleLbl.text = self.channelList[i];
             titleLbl.textAlignment = NSTextAlignmentCenter;
             titleLbl.textColor = [UIColor whiteColor];
@@ -69,6 +69,13 @@
         _beforeMinX = _backgroundImg.x;
     }
     return self;
+}
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+
+    // 打印self的尺寸
+    //NSLog(@"%@", NSStringFromCGRect(self.frame));
 }
 
 - (void)titleClick:(UITapGestureRecognizer *)ges {

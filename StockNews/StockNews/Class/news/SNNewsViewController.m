@@ -40,13 +40,13 @@
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     
-    self.tagsView.frame = CGRectMake(0, 0, self.view.width, 40);
     self.pageScrollView.frame = CGRectMake(0, 0, self.view.width, self.view.height);
 }
 
 - (void)initTagsView {
     SBWS(__self);
     _tagsView = [[SNTagsView alloc] initWithChannelList:self.channelList];
+    self.tagsView.frame = CGRectMake(0, 0, self.view.width, 44);
     self.navigationItem.titleView = _tagsView;
 
     _tagsView.titleClick = ^(NSInteger tag) {
