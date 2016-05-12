@@ -77,6 +77,15 @@
     
 }
 
+- (void)prepareForReuse {
+    [super prepareForReuse];
+    
+    self.simLbl.text = nil;
+    self.commentNumLbl.text = nil;
+    self.imgView.image = nil;
+    self.titleLbl.text = nil;
+}
+
 - (void)bindCellData {
     [super bindCellData];
     
