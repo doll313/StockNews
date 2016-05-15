@@ -30,6 +30,19 @@
 
 @implementation SBCommentCell
 
+- (void)prepareForReuse {
+    [super prepareForReuse];
+    
+    self.avatarImageView.image = nil;
+    self.userNameLbl.text = nil;
+    self.replyTextView.attributedText = nil;
+    self.ageLbl.text = nil;
+    self.userAgeLbl.text = nil;
+    self.timeLbl.text = nil;
+    self.likeCountLbl.text = nil;
+    self.infuLbl.text = nil;
+}
+
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {

@@ -168,8 +168,9 @@
     self.timeLbl.text = nil;
     self.fromLbl.text = nil;
     self.titleLbl.text = nil;
+    self.infuLbl.text = nil;
     self.contentLbl.attributedText = nil;
-    
+    self.ageLbl.text = nil;
     [self.replyToolView resetBtn];
 }
 

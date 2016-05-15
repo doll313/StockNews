@@ -60,6 +60,13 @@
     
 }
 
+- (void)prepareForReuse {
+    [super prepareForReuse];
+    
+    self.timeLbl.text = nil;
+    self.titleLbl.text = nil;
+}
+
 - (void)bindCellData {
     [super bindCellData];
 
